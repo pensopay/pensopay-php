@@ -14,5 +14,8 @@ composer.phar
 # PHPUnit cache
 .phpunit.result.cache
 
+#Push file
+git_push.sh
+
 #idea
-.idea
+.idea/
