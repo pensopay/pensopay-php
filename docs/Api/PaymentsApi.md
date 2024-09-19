@@ -1,4 +1,4 @@
-# PensoPay\Client\PaymentsApi
+# Pensopay\Client\PaymentsApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -17,7 +17,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `anonymizePayment()`
 
 ```php
-anonymizePayment($id): \PensoPay\Client\Model\PaymentPaymentResponse
+anonymizePayment($id): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Anonymize payment
@@ -30,10 +30,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ try {
 ## `cancelPayment()`
 
 ```php
-cancelPayment($id): \PensoPay\Client\Model\PaymentPaymentResponse
+cancelPayment($id): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Cancel payment
@@ -88,10 +88,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -115,7 +115,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ try {
 ## `capturePayment()`
 
 ```php
-capturePayment($id, $payment_capture_payment_request): \PensoPay\Client\Model\PaymentPaymentResponse
+capturePayment($id, $payment_capture_payment_request): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Capture payment
@@ -146,17 +146,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | Id of the payment to capture
-$payment_capture_payment_request = new \PensoPay\Client\Model\PaymentCapturePaymentRequest(); // \PensoPay\Client\Model\PaymentCapturePaymentRequest | payment
+$payment_capture_payment_request = new \Pensopay\Client\Model\PaymentCapturePaymentRequest(); // \Pensopay\Client\Model\PaymentCapturePaymentRequest | payment
 
 try {
     $result = $apiInstance->capturePayment($id, $payment_capture_payment_request);
@@ -171,11 +171,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Id of the payment to capture | |
-| **payment_capture_payment_request** | [**\PensoPay\Client\Model\PaymentCapturePaymentRequest**](../Model/PaymentCapturePaymentRequest.md)| payment | [optional] |
+| **payment_capture_payment_request** | [**\Pensopay\Client\Model\PaymentCapturePaymentRequest**](../Model/PaymentCapturePaymentRequest.md)| payment | [optional] |
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ try {
 ## `createPayment()`
 
 ```php
-createPayment($payment_create_payment_request): \PensoPay\Client\Model\PaymentPaymentResponse
+createPayment($payment_create_payment_request): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Create new payment
@@ -208,16 +208,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$payment_create_payment_request = new \PensoPay\Client\Model\PaymentCreatePaymentRequest(); // \PensoPay\Client\Model\PaymentCreatePaymentRequest | payment
+$payment_create_payment_request = new \Pensopay\Client\Model\PaymentCreatePaymentRequest(); // \Pensopay\Client\Model\PaymentCreatePaymentRequest | payment
 
 try {
     $result = $apiInstance->createPayment($payment_create_payment_request);
@@ -231,11 +231,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **payment_create_payment_request** | [**\PensoPay\Client\Model\PaymentCreatePaymentRequest**](../Model/PaymentCreatePaymentRequest.md)| payment | |
+| **payment_create_payment_request** | [**\Pensopay\Client\Model\PaymentCreatePaymentRequest**](../Model/PaymentCreatePaymentRequest.md)| payment | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 
@@ -253,7 +253,7 @@ try {
 ## `getPayment()`
 
 ```php
-getPayment($id): \PensoPay\Client\Model\PaymentPaymentResponse
+getPayment($id): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Get single payment
@@ -268,10 +268,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -295,7 +295,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ try {
 ## `getPaymentEvents()`
 
 ```php
-getPaymentEvents($id, $type): \PensoPay\Client\Model\GetPaymentEvents200Response
+getPaymentEvents($id, $type): \Pensopay\Client\Model\GetPaymentEvents200Response
 ```
 
 Get events for a given payment
@@ -326,10 +326,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -355,7 +355,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\GetPaymentEvents200Response**](../Model/GetPaymentEvents200Response.md)
+[**\Pensopay\Client\Model\GetPaymentEvents200Response**](../Model/GetPaymentEvents200Response.md)
 
 ### Authorization
 
@@ -373,7 +373,7 @@ try {
 ## `getPayments()`
 
 ```php
-getPayments($order_id, $per_page, $page, $currency, $date_from, $date_to, $updated_after, $updated_before): \PensoPay\Client\Model\PaymentPaymentsResponse
+getPayments($order_id, $per_page, $page, $currency, $date_from, $date_to, $updated_after, $updated_before): \Pensopay\Client\Model\PaymentPaymentsResponse
 ```
 
 Get payments
@@ -386,10 +386,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -427,7 +427,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentsResponse**](../Model/PaymentPaymentsResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentsResponse**](../Model/PaymentPaymentsResponse.md)
 
 ### Authorization
 
@@ -445,7 +445,7 @@ try {
 ## `refundPayment()`
 
 ```php
-refundPayment($id, $payment_refund_payment_request): \PensoPay\Client\Model\PaymentPaymentResponse
+refundPayment($id, $payment_refund_payment_request): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Refund payment
@@ -458,17 +458,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\PaymentsApi(
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | Id of the payment to refund
-$payment_refund_payment_request = new \PensoPay\Client\Model\PaymentRefundPaymentRequest(); // \PensoPay\Client\Model\PaymentRefundPaymentRequest | payment
+$payment_refund_payment_request = new \Pensopay\Client\Model\PaymentRefundPaymentRequest(); // \Pensopay\Client\Model\PaymentRefundPaymentRequest | payment
 
 try {
     $result = $apiInstance->refundPayment($id, $payment_refund_payment_request);
@@ -483,11 +483,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Id of the payment to refund | |
-| **payment_refund_payment_request** | [**\PensoPay\Client\Model\PaymentRefundPaymentRequest**](../Model/PaymentRefundPaymentRequest.md)| payment | [optional] |
+| **payment_refund_payment_request** | [**\Pensopay\Client\Model\PaymentRefundPaymentRequest**](../Model/PaymentRefundPaymentRequest.md)| payment | [optional] |
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 

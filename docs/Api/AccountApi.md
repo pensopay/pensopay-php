@@ -1,4 +1,4 @@
-# PensoPay\Client\AccountApi
+# Pensopay\Client\AccountApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -10,7 +10,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `getAccount()`
 
 ```php
-getAccount(): \PensoPay\Client\Model\Account
+getAccount(): \Pensopay\Client\Model\Account
 ```
 
 Get account details
@@ -23,10 +23,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\AccountApi(
+$apiInstance = new Pensopay\Client\Api\AccountApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\PensoPay\Client\Model\Account**](../Model/Account.md)
+[**\Pensopay\Client\Model\Account**](../Model/Account.md)
 
 ### Authorization
 

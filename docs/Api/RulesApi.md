@@ -1,4 +1,4 @@
-# PensoPay\Client\RulesApi
+# Pensopay\Client\RulesApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -13,7 +13,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `createRule()`
 
 ```php
-createRule($new_rule): \PensoPay\Client\Model\RuleResponse
+createRule($new_rule): \Pensopay\Client\Model\RuleResponse
 ```
 
 
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\RulesApi(
+$apiInstance = new Pensopay\Client\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$new_rule = new \PensoPay\Client\Model\NewRule(); // \PensoPay\Client\Model\NewRule
+$new_rule = new \Pensopay\Client\Model\NewRule(); // \Pensopay\Client\Model\NewRule
 
 try {
     $result = $apiInstance->createRule($new_rule);
@@ -51,11 +51,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **new_rule** | [**\PensoPay\Client\Model\NewRule**](../Model/NewRule.md)|  | |
+| **new_rule** | [**\Pensopay\Client\Model\NewRule**](../Model/NewRule.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\RuleResponse**](../Model/RuleResponse.md)
+[**\Pensopay\Client\Model\RuleResponse**](../Model/RuleResponse.md)
 
 ### Authorization
 
@@ -88,10 +88,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\RulesApi(
+$apiInstance = new Pensopay\Client\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -132,7 +132,7 @@ void (empty response body)
 ## `getRules()`
 
 ```php
-getRules(): \PensoPay\Client\Model\GetRules200Response
+getRules(): \Pensopay\Client\Model\GetRules200Response
 ```
 
 
@@ -147,10 +147,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\RulesApi(
+$apiInstance = new Pensopay\Client\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -171,7 +171,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\PensoPay\Client\Model\GetRules200Response**](../Model/GetRules200Response.md)
+[**\Pensopay\Client\Model\GetRules200Response**](../Model/GetRules200Response.md)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ This endpoint does not need any parameter.
 ## `updateRule()`
 
 ```php
-updateRule($id, $rule_base): \PensoPay\Client\Model\RuleResponse
+updateRule($id, $rule_base): \Pensopay\Client\Model\RuleResponse
 ```
 
 
@@ -204,17 +204,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\RulesApi(
+$apiInstance = new Pensopay\Client\Api\RulesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $id = 56; // int | Id for the payment
-$rule_base = new \PensoPay\Client\Model\RuleBase(); // \PensoPay\Client\Model\RuleBase
+$rule_base = new \Pensopay\Client\Model\RuleBase(); // \Pensopay\Client\Model\RuleBase
 
 try {
     $result = $apiInstance->updateRule($id, $rule_base);
@@ -229,11 +229,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Id for the payment | |
-| **rule_base** | [**\PensoPay\Client\Model\RuleBase**](../Model/RuleBase.md)|  | |
+| **rule_base** | [**\Pensopay\Client\Model\RuleBase**](../Model/RuleBase.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\RuleResponse**](../Model/RuleResponse.md)
+[**\Pensopay\Client\Model\RuleResponse**](../Model/RuleResponse.md)
 
 ### Authorization
 

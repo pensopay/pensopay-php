@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * FeesApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -143,12 +143,12 @@ class FeesApi
      *
      * Create a new fee
      *
-     * @param  \PensoPay\Client\Model\CreateFeeRequest $create_fee_request create_fee_request (required)
+     * @param  \Pensopay\Client\Model\CreateFeeRequest $create_fee_request create_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\FeeResponse
+     * @return \Pensopay\Client\Model\FeeResponse
      */
     public function createANewFee($create_fee_request, string $contentType = self::contentTypes['createANewFee'][0])
     {
@@ -161,12 +161,12 @@ class FeesApi
      *
      * Create a new fee
      *
-     * @param  \PensoPay\Client\Model\CreateFeeRequest $create_fee_request (required)
+     * @param  \Pensopay\Client\Model\CreateFeeRequest $create_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\FeeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\FeeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createANewFeeWithHttpInfo($create_fee_request, string $contentType = self::contentTypes['createANewFee'][0])
     {
@@ -209,11 +209,11 @@ class FeesApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\PensoPay\Client\Model\FeeResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\FeeResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\FeeResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\FeeResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -231,13 +231,13 @@ class FeesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\FeeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\FeeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\FeeResponse';
+            $returnType = '\Pensopay\Client\Model\FeeResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -270,7 +270,7 @@ class FeesApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\FeeResponse',
+                        '\Pensopay\Client\Model\FeeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -285,7 +285,7 @@ class FeesApi
      *
      * Create a new fee
      *
-     * @param  \PensoPay\Client\Model\CreateFeeRequest $create_fee_request (required)
+     * @param  \Pensopay\Client\Model\CreateFeeRequest $create_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewFee'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -306,7 +306,7 @@ class FeesApi
      *
      * Create a new fee
      *
-     * @param  \PensoPay\Client\Model\CreateFeeRequest $create_fee_request (required)
+     * @param  \Pensopay\Client\Model\CreateFeeRequest $create_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewFee'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -314,7 +314,7 @@ class FeesApi
      */
     public function createANewFeeAsyncWithHttpInfo($create_fee_request, string $contentType = self::contentTypes['createANewFee'][0])
     {
-        $returnType = '\PensoPay\Client\Model\FeeResponse';
+        $returnType = '\Pensopay\Client\Model\FeeResponse';
         $request = $this->createANewFeeRequest($create_fee_request, $contentType);
 
         return $this->client
@@ -356,7 +356,7 @@ class FeesApi
     /**
      * Create request for operation 'createANewFee'
      *
-     * @param  \PensoPay\Client\Model\CreateFeeRequest $create_fee_request (required)
+     * @param  \Pensopay\Client\Model\CreateFeeRequest $create_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewFee'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -456,7 +456,7 @@ class FeesApi
      * @param  int $fee The Fee ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -473,7 +473,7 @@ class FeesApi
      * @param  int $fee The Fee ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteAFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -689,9 +689,9 @@ class FeesApi
      * @param  int $fee The Fee ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\FeeResponse
+     * @return \Pensopay\Client\Model\FeeResponse
      */
     public function getAFee($fee, string $contentType = self::contentTypes['getAFee'][0])
     {
@@ -707,9 +707,9 @@ class FeesApi
      * @param  int $fee The Fee ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\FeeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\FeeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAFeeWithHttpInfo($fee, string $contentType = self::contentTypes['getAFee'][0])
     {
@@ -752,11 +752,11 @@ class FeesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\FeeResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\FeeResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\FeeResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\FeeResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -774,13 +774,13 @@ class FeesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\FeeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\FeeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\FeeResponse';
+            $returnType = '\Pensopay\Client\Model\FeeResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -813,7 +813,7 @@ class FeesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\FeeResponse',
+                        '\Pensopay\Client\Model\FeeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -857,7 +857,7 @@ class FeesApi
      */
     public function getAFeeAsyncWithHttpInfo($fee, string $contentType = self::contentTypes['getAFee'][0])
     {
-        $returnType = '\PensoPay\Client\Model\FeeResponse';
+        $returnType = '\Pensopay\Client\Model\FeeResponse';
         $request = $this->getAFeeRequest($fee, $contentType);
 
         return $this->client
@@ -1001,9 +1001,9 @@ class FeesApi
      * @param  int $page What page to view. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAListOfFees'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\GetAListOfFees200Response
+     * @return \Pensopay\Client\Model\GetAListOfFees200Response
      */
     public function getAListOfFees($per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfFees'][0])
     {
@@ -1020,9 +1020,9 @@ class FeesApi
      * @param  int $page What page to view. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAListOfFees'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\GetAListOfFees200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\GetAListOfFees200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAListOfFeesWithHttpInfo($per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfFees'][0])
     {
@@ -1065,11 +1065,11 @@ class FeesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\GetAListOfFees200Response' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\GetAListOfFees200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\GetAListOfFees200Response' !== 'string') {
+                        if ('\Pensopay\Client\Model\GetAListOfFees200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1087,13 +1087,13 @@ class FeesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\GetAListOfFees200Response', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\GetAListOfFees200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\GetAListOfFees200Response';
+            $returnType = '\Pensopay\Client\Model\GetAListOfFees200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1126,7 +1126,7 @@ class FeesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\GetAListOfFees200Response',
+                        '\Pensopay\Client\Model\GetAListOfFees200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1172,7 +1172,7 @@ class FeesApi
      */
     public function getAListOfFeesAsyncWithHttpInfo($per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfFees'][0])
     {
-        $returnType = '\PensoPay\Client\Model\GetAListOfFees200Response';
+        $returnType = '\Pensopay\Client\Model\GetAListOfFees200Response';
         $request = $this->getAListOfFeesRequest($per_page, $page, $contentType);
 
         return $this->client
@@ -1321,12 +1321,12 @@ class FeesApi
      *
      * Test fees for account
      *
-     * @param  \PensoPay\Client\Model\TestFeeRequest $test_fee_request test_fee_request (required)
+     * @param  \Pensopay\Client\Model\TestFeeRequest $test_fee_request test_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['testFees'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\TestFeeResponse
+     * @return \Pensopay\Client\Model\TestFeeResponse
      */
     public function testFees($test_fee_request, string $contentType = self::contentTypes['testFees'][0])
     {
@@ -1339,12 +1339,12 @@ class FeesApi
      *
      * Test fees for account
      *
-     * @param  \PensoPay\Client\Model\TestFeeRequest $test_fee_request (required)
+     * @param  \Pensopay\Client\Model\TestFeeRequest $test_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['testFees'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\TestFeeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\TestFeeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function testFeesWithHttpInfo($test_fee_request, string $contentType = self::contentTypes['testFees'][0])
     {
@@ -1387,11 +1387,11 @@ class FeesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\TestFeeResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\TestFeeResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\TestFeeResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\TestFeeResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1409,13 +1409,13 @@ class FeesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\TestFeeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\TestFeeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\TestFeeResponse';
+            $returnType = '\Pensopay\Client\Model\TestFeeResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1448,7 +1448,7 @@ class FeesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\TestFeeResponse',
+                        '\Pensopay\Client\Model\TestFeeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1463,7 +1463,7 @@ class FeesApi
      *
      * Test fees for account
      *
-     * @param  \PensoPay\Client\Model\TestFeeRequest $test_fee_request (required)
+     * @param  \Pensopay\Client\Model\TestFeeRequest $test_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['testFees'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1484,7 +1484,7 @@ class FeesApi
      *
      * Test fees for account
      *
-     * @param  \PensoPay\Client\Model\TestFeeRequest $test_fee_request (required)
+     * @param  \Pensopay\Client\Model\TestFeeRequest $test_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['testFees'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1492,7 +1492,7 @@ class FeesApi
      */
     public function testFeesAsyncWithHttpInfo($test_fee_request, string $contentType = self::contentTypes['testFees'][0])
     {
-        $returnType = '\PensoPay\Client\Model\TestFeeResponse';
+        $returnType = '\Pensopay\Client\Model\TestFeeResponse';
         $request = $this->testFeesRequest($test_fee_request, $contentType);
 
         return $this->client
@@ -1534,7 +1534,7 @@ class FeesApi
     /**
      * Create request for operation 'testFees'
      *
-     * @param  \PensoPay\Client\Model\TestFeeRequest $test_fee_request (required)
+     * @param  \Pensopay\Client\Model\TestFeeRequest $test_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['testFees'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1632,12 +1632,12 @@ class FeesApi
      * Update a fee
      *
      * @param  int $fee The Fee ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateFeeRequest $update_fee_request update_fee_request (required)
+     * @param  \Pensopay\Client\Model\UpdateFeeRequest $update_fee_request update_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\FeeResponse
+     * @return \Pensopay\Client\Model\FeeResponse
      */
     public function updateAFee($fee, $update_fee_request, string $contentType = self::contentTypes['updateAFee'][0])
     {
@@ -1651,12 +1651,12 @@ class FeesApi
      * Update a fee
      *
      * @param  int $fee The Fee ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateFeeRequest $update_fee_request (required)
+     * @param  \Pensopay\Client\Model\UpdateFeeRequest $update_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAFee'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\FeeResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\FeeResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAFeeWithHttpInfo($fee, $update_fee_request, string $contentType = self::contentTypes['updateAFee'][0])
     {
@@ -1699,11 +1699,11 @@ class FeesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\FeeResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\FeeResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\FeeResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\FeeResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1721,13 +1721,13 @@ class FeesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\FeeResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\FeeResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\FeeResponse';
+            $returnType = '\Pensopay\Client\Model\FeeResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1760,7 +1760,7 @@ class FeesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\FeeResponse',
+                        '\Pensopay\Client\Model\FeeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1776,7 +1776,7 @@ class FeesApi
      * Update a fee
      *
      * @param  int $fee The Fee ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateFeeRequest $update_fee_request (required)
+     * @param  \Pensopay\Client\Model\UpdateFeeRequest $update_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAFee'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1798,7 +1798,7 @@ class FeesApi
      * Update a fee
      *
      * @param  int $fee The Fee ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateFeeRequest $update_fee_request (required)
+     * @param  \Pensopay\Client\Model\UpdateFeeRequest $update_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAFee'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1806,7 +1806,7 @@ class FeesApi
      */
     public function updateAFeeAsyncWithHttpInfo($fee, $update_fee_request, string $contentType = self::contentTypes['updateAFee'][0])
     {
-        $returnType = '\PensoPay\Client\Model\FeeResponse';
+        $returnType = '\Pensopay\Client\Model\FeeResponse';
         $request = $this->updateAFeeRequest($fee, $update_fee_request, $contentType);
 
         return $this->client
@@ -1849,7 +1849,7 @@ class FeesApi
      * Create request for operation 'updateAFee'
      *
      * @param  int $fee The Fee ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateFeeRequest $update_fee_request (required)
+     * @param  \Pensopay\Client\Model\UpdateFeeRequest $update_fee_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateAFee'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

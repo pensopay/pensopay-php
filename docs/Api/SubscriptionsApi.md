@@ -1,4 +1,4 @@
-# PensoPay\Client\SubscriptionsApi
+# Pensopay\Client\SubscriptionsApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -19,7 +19,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `cancelSubscription()`
 
 ```php
-cancelSubscription($subscription): \PensoPay\Client\Model\SubscriptionResponse
+cancelSubscription($subscription): \Pensopay\Client\Model\SubscriptionResponse
 ```
 
 Cancel subscription
@@ -34,10 +34,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -61,7 +61,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
+[**\Pensopay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ try {
 ## `createANewMandate()`
 
 ```php
-createANewMandate($subscription, $new_mandate): \PensoPay\Client\Model\MandateResponse
+createANewMandate($subscription, $new_mandate): \Pensopay\Client\Model\MandateResponse
 ```
 
 Create a new mandate
@@ -94,17 +94,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $subscription = 56; // int | Subscription ID.
-$new_mandate = new \PensoPay\Client\Model\NewMandate(); // \PensoPay\Client\Model\NewMandate
+$new_mandate = new \Pensopay\Client\Model\NewMandate(); // \Pensopay\Client\Model\NewMandate
 
 try {
     $result = $apiInstance->createANewMandate($subscription, $new_mandate);
@@ -119,11 +119,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscription** | **int**| Subscription ID. | |
-| **new_mandate** | [**\PensoPay\Client\Model\NewMandate**](../Model/NewMandate.md)|  | |
+| **new_mandate** | [**\Pensopay\Client\Model\NewMandate**](../Model/NewMandate.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\MandateResponse**](../Model/MandateResponse.md)
+[**\Pensopay\Client\Model\MandateResponse**](../Model/MandateResponse.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ try {
 ## `createANewSubscription()`
 
 ```php
-createANewSubscription($create_subscription_request): \PensoPay\Client\Model\SubscriptionResponse
+createANewSubscription($create_subscription_request): \Pensopay\Client\Model\SubscriptionResponse
 ```
 
 Create a new subscription
@@ -156,16 +156,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_subscription_request = new \PensoPay\Client\Model\CreateSubscriptionRequest(); // \PensoPay\Client\Model\CreateSubscriptionRequest
+$create_subscription_request = new \Pensopay\Client\Model\CreateSubscriptionRequest(); // \Pensopay\Client\Model\CreateSubscriptionRequest
 
 try {
     $result = $apiInstance->createANewSubscription($create_subscription_request);
@@ -179,11 +179,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_subscription_request** | [**\PensoPay\Client\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  | |
+| **create_subscription_request** | [**\Pensopay\Client\Model\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
+[**\Pensopay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ try {
 ## `createPayment1()`
 
 ```php
-createPayment1($subscription, $payment_base): \PensoPay\Client\Model\PaymentResponse
+createPayment1($subscription, $payment_base): \Pensopay\Client\Model\PaymentResponse
 ```
 
 Create payment
@@ -216,17 +216,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $subscription = 56; // int | The subscription ID.
-$payment_base = new \PensoPay\Client\Model\PaymentBase(); // \PensoPay\Client\Model\PaymentBase
+$payment_base = new \Pensopay\Client\Model\PaymentBase(); // \Pensopay\Client\Model\PaymentBase
 
 try {
     $result = $apiInstance->createPayment1($subscription, $payment_base);
@@ -241,11 +241,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscription** | **int**| The subscription ID. | |
-| **payment_base** | [**\PensoPay\Client\Model\PaymentBase**](../Model/PaymentBase.md)|  | |
+| **payment_base** | [**\Pensopay\Client\Model\PaymentBase**](../Model/PaymentBase.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\PaymentResponse**](../Model/PaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentResponse**](../Model/PaymentResponse.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ try {
 ## `getAListOfMandates()`
 
 ```php
-getAListOfMandates($subscription, $per_page, $page): \PensoPay\Client\Model\GetAListOfMandates200Response
+getAListOfMandates($subscription, $per_page, $page): \Pensopay\Client\Model\GetAListOfMandates200Response
 ```
 
 Get a list of mandates
@@ -278,10 +278,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -309,7 +309,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\GetAListOfMandates200Response**](../Model/GetAListOfMandates200Response.md)
+[**\Pensopay\Client\Model\GetAListOfMandates200Response**](../Model/GetAListOfMandates200Response.md)
 
 ### Authorization
 
@@ -327,7 +327,7 @@ try {
 ## `getAListOfSubscriptions()`
 
 ```php
-getAListOfSubscriptions($per_page, $page): \PensoPay\Client\Model\GetAListOfSubscriptions200Response
+getAListOfSubscriptions($per_page, $page): \Pensopay\Client\Model\GetAListOfSubscriptions200Response
 ```
 
 Get a list of subscriptions
@@ -342,10 +342,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -371,7 +371,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\GetAListOfSubscriptions200Response**](../Model/GetAListOfSubscriptions200Response.md)
+[**\Pensopay\Client\Model\GetAListOfSubscriptions200Response**](../Model/GetAListOfSubscriptions200Response.md)
 
 ### Authorization
 
@@ -389,7 +389,7 @@ try {
 ## `getSingleMandate()`
 
 ```php
-getSingleMandate($subscription, $mandate): \PensoPay\Client\Model\MandateResponse
+getSingleMandate($subscription, $mandate): \Pensopay\Client\Model\MandateResponse
 ```
 
 Get single mandate
@@ -404,10 +404,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -433,7 +433,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\MandateResponse**](../Model/MandateResponse.md)
+[**\Pensopay\Client\Model\MandateResponse**](../Model/MandateResponse.md)
 
 ### Authorization
 
@@ -451,7 +451,7 @@ try {
 ## `getSingleSubscription()`
 
 ```php
-getSingleSubscription($subscription): \PensoPay\Client\Model\SubscriptionResponse
+getSingleSubscription($subscription): \Pensopay\Client\Model\SubscriptionResponse
 ```
 
 Get single subscription
@@ -466,10 +466,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -493,7 +493,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
+[**\Pensopay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
 
 ### Authorization
 
@@ -511,7 +511,7 @@ try {
 ## `revokeAMandate()`
 
 ```php
-revokeAMandate($subscription, $mandate): \PensoPay\Client\Model\MandateResponse
+revokeAMandate($subscription, $mandate): \Pensopay\Client\Model\MandateResponse
 ```
 
 Revoke a mandate
@@ -526,10 +526,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -555,7 +555,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\MandateResponse**](../Model/MandateResponse.md)
+[**\Pensopay\Client\Model\MandateResponse**](../Model/MandateResponse.md)
 
 ### Authorization
 
@@ -573,7 +573,7 @@ try {
 ## `updateASubscription()`
 
 ```php
-updateASubscription($subscription, $update_subscription_request): \PensoPay\Client\Model\SubscriptionResponse
+updateASubscription($subscription, $update_subscription_request): \Pensopay\Client\Model\SubscriptionResponse
 ```
 
 Update a subscription
@@ -588,17 +588,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SubscriptionsApi(
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $subscription = 56; // int | The subscription ID.
-$update_subscription_request = new \PensoPay\Client\Model\UpdateSubscriptionRequest(); // \PensoPay\Client\Model\UpdateSubscriptionRequest
+$update_subscription_request = new \Pensopay\Client\Model\UpdateSubscriptionRequest(); // \Pensopay\Client\Model\UpdateSubscriptionRequest
 
 try {
     $result = $apiInstance->updateASubscription($subscription, $update_subscription_request);
@@ -613,11 +613,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscription** | **int**| The subscription ID. | |
-| **update_subscription_request** | [**\PensoPay\Client\Model\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)|  | |
+| **update_subscription_request** | [**\Pensopay\Client\Model\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
+[**\Pensopay\Client\Model\SubscriptionResponse**](../Model/SubscriptionResponse.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * GetAListOfSubscriptions200Response Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class GetAListOfSubscriptions200Response implements ModelInterface, ArrayAccess,
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\PensoPay\Client\Model\SubscriptionResponse[]',
-        'meta' => '\PensoPay\Client\Model\Pagination'
+        'data' => '\Pensopay\Client\Model\SubscriptionResponse[]',
+        'meta' => '\Pensopay\Client\Model\Pagination'
     ];
 
     /**
@@ -306,7 +306,7 @@ class GetAListOfSubscriptions200Response implements ModelInterface, ArrayAccess,
     /**
      * Gets data
      *
-     * @return \PensoPay\Client\Model\SubscriptionResponse[]
+     * @return \Pensopay\Client\Model\SubscriptionResponse[]
      */
     public function getData()
     {
@@ -316,7 +316,7 @@ class GetAListOfSubscriptions200Response implements ModelInterface, ArrayAccess,
     /**
      * Sets data
      *
-     * @param \PensoPay\Client\Model\SubscriptionResponse[] $data data
+     * @param \Pensopay\Client\Model\SubscriptionResponse[] $data data
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class GetAListOfSubscriptions200Response implements ModelInterface, ArrayAccess,
     /**
      * Gets meta
      *
-     * @return \PensoPay\Client\Model\Pagination
+     * @return \Pensopay\Client\Model\Pagination
      */
     public function getMeta()
     {
@@ -343,7 +343,7 @@ class GetAListOfSubscriptions200Response implements ModelInterface, ArrayAccess,
     /**
      * Sets meta
      *
-     * @param \PensoPay\Client\Model\Pagination $meta meta
+     * @param \Pensopay\Client\Model\Pagination $meta meta
      *
      * @return self
      */

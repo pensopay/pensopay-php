@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * AccountApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -130,9 +130,9 @@ class AccountApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\Account
+     * @return \Pensopay\Client\Model\Account
      */
     public function getAccount(string $contentType = self::contentTypes['getAccount'][0])
     {
@@ -147,9 +147,9 @@ class AccountApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAccount'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountWithHttpInfo(string $contentType = self::contentTypes['getAccount'][0])
     {
@@ -192,11 +192,11 @@ class AccountApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\Account' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\Account' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\Account' !== 'string') {
+                        if ('\Pensopay\Client\Model\Account' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -214,13 +214,13 @@ class AccountApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\Account', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\Account', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\Account';
+            $returnType = '\Pensopay\Client\Model\Account';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -253,7 +253,7 @@ class AccountApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\Account',
+                        '\Pensopay\Client\Model\Account',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -295,7 +295,7 @@ class AccountApi
      */
     public function getAccountAsyncWithHttpInfo(string $contentType = self::contentTypes['getAccount'][0])
     {
-        $returnType = '\PensoPay\Client\Model\Account';
+        $returnType = '\Pensopay\Client\Model\Account';
         $request = $this->getAccountRequest($contentType);
 
         return $this->client

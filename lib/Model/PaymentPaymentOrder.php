@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * PaymentPaymentOrder Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,10 +58,10 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'basket' => '\PensoPay\Client\Model\PaymentPaymentBasket[]',
-        'billing_address' => '\PensoPay\Client\Model\PaymentPaymentAddress',
-        'shipping' => '\PensoPay\Client\Model\PaymentShipping',
-        'shipping_address' => '\PensoPay\Client\Model\PaymentPaymentAddress'
+        'basket' => '\Pensopay\Client\Model\PaymentPaymentBasket[]',
+        'billing_address' => '\Pensopay\Client\Model\PaymentPaymentAddress',
+        'shipping' => '\Pensopay\Client\Model\PaymentShipping',
+        'shipping_address' => '\Pensopay\Client\Model\PaymentPaymentAddress'
     ];
 
     /**
@@ -318,7 +318,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets basket
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentBasket[]|null
+     * @return \Pensopay\Client\Model\PaymentPaymentBasket[]|null
      */
     public function getBasket()
     {
@@ -328,7 +328,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets basket
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentBasket[]|null $basket basket
+     * @param \Pensopay\Client\Model\PaymentPaymentBasket[]|null $basket basket
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets billing_address
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentAddress|null
+     * @return \Pensopay\Client\Model\PaymentPaymentAddress|null
      */
     public function getBillingAddress()
     {
@@ -360,7 +360,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets billing_address
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentAddress|null $billing_address billing_address
+     * @param \Pensopay\Client\Model\PaymentPaymentAddress|null $billing_address billing_address
      *
      * @return self
      */
@@ -377,7 +377,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets shipping
      *
-     * @return \PensoPay\Client\Model\PaymentShipping|null
+     * @return \Pensopay\Client\Model\PaymentShipping|null
      */
     public function getShipping()
     {
@@ -387,7 +387,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shipping
      *
-     * @param \PensoPay\Client\Model\PaymentShipping|null $shipping shipping
+     * @param \Pensopay\Client\Model\PaymentShipping|null $shipping shipping
      *
      * @return self
      */
@@ -404,7 +404,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets shipping_address
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentAddress|null
+     * @return \Pensopay\Client\Model\PaymentPaymentAddress|null
      */
     public function getShippingAddress()
     {
@@ -414,7 +414,7 @@ class PaymentPaymentOrder implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets shipping_address
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentAddress|null $shipping_address shipping_address
+     * @param \Pensopay\Client\Model\PaymentPaymentAddress|null $shipping_address shipping_address
      *
      * @return self
      */

@@ -1,4 +1,4 @@
-# PensoPay\Client\FeesApi
+# Pensopay\Client\FeesApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `createANewFee()`
 
 ```php
-createANewFee($create_fee_request): \PensoPay\Client\Model\FeeResponse
+createANewFee($create_fee_request): \Pensopay\Client\Model\FeeResponse
 ```
 
 Create a new fee
@@ -28,16 +28,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\FeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_fee_request = new \PensoPay\Client\Model\CreateFeeRequest(); // \PensoPay\Client\Model\CreateFeeRequest
+$create_fee_request = new \Pensopay\Client\Model\CreateFeeRequest(); // \Pensopay\Client\Model\CreateFeeRequest
 
 try {
     $result = $apiInstance->createANewFee($create_fee_request);
@@ -51,11 +51,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_fee_request** | [**\PensoPay\Client\Model\CreateFeeRequest**](../Model/CreateFeeRequest.md)|  | |
+| **create_fee_request** | [**\Pensopay\Client\Model\CreateFeeRequest**](../Model/CreateFeeRequest.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
+[**\Pensopay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
 
 ### Authorization
 
@@ -86,10 +86,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\FeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -130,7 +130,7 @@ void (empty response body)
 ## `getAFee()`
 
 ```php
-getAFee($fee): \PensoPay\Client\Model\FeeResponse
+getAFee($fee): \Pensopay\Client\Model\FeeResponse
 ```
 
 Get a single fee
@@ -143,10 +143,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\FeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -170,7 +170,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
+[**\Pensopay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ try {
 ## `getAListOfFees()`
 
 ```php
-getAListOfFees($per_page, $page): \PensoPay\Client\Model\GetAListOfFees200Response
+getAListOfFees($per_page, $page): \Pensopay\Client\Model\GetAListOfFees200Response
 ```
 
 Get auto-fees configured for account
@@ -201,10 +201,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\FeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -230,7 +230,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\GetAListOfFees200Response**](../Model/GetAListOfFees200Response.md)
+[**\Pensopay\Client\Model\GetAListOfFees200Response**](../Model/GetAListOfFees200Response.md)
 
 ### Authorization
 
@@ -248,7 +248,7 @@ try {
 ## `testFees()`
 
 ```php
-testFees($test_fee_request): \PensoPay\Client\Model\TestFeeResponse
+testFees($test_fee_request): \Pensopay\Client\Model\TestFeeResponse
 ```
 
 Test fees for account
@@ -261,16 +261,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\FeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$test_fee_request = new \PensoPay\Client\Model\TestFeeRequest(); // \PensoPay\Client\Model\TestFeeRequest
+$test_fee_request = new \Pensopay\Client\Model\TestFeeRequest(); // \Pensopay\Client\Model\TestFeeRequest
 
 try {
     $result = $apiInstance->testFees($test_fee_request);
@@ -284,11 +284,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **test_fee_request** | [**\PensoPay\Client\Model\TestFeeRequest**](../Model/TestFeeRequest.md)|  | |
+| **test_fee_request** | [**\Pensopay\Client\Model\TestFeeRequest**](../Model/TestFeeRequest.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\TestFeeResponse**](../Model/TestFeeResponse.md)
+[**\Pensopay\Client\Model\TestFeeResponse**](../Model/TestFeeResponse.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ try {
 ## `updateAFee()`
 
 ```php
-updateAFee($fee, $update_fee_request): \PensoPay\Client\Model\FeeResponse
+updateAFee($fee, $update_fee_request): \Pensopay\Client\Model\FeeResponse
 ```
 
 Update a fee
@@ -319,17 +319,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\FeesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $fee = 56; // int | The Fee ID.
-$update_fee_request = new \PensoPay\Client\Model\UpdateFeeRequest(); // \PensoPay\Client\Model\UpdateFeeRequest
+$update_fee_request = new \Pensopay\Client\Model\UpdateFeeRequest(); // \Pensopay\Client\Model\UpdateFeeRequest
 
 try {
     $result = $apiInstance->updateAFee($fee, $update_fee_request);
@@ -344,11 +344,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **fee** | **int**| The Fee ID. | |
-| **update_fee_request** | [**\PensoPay\Client\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  | |
+| **update_fee_request** | [**\Pensopay\Client\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  | |
 
 ### Return type
 
-[**\PensoPay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
+[**\Pensopay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
 
 ### Authorization
 

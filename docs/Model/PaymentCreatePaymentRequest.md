@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **currency** | **string** | The currency in ISO 4217 format |
 **locale** | **string** | Locale to use in payment window | [optional]
 **methods** | **string[]** | The methods allowed for the payment   - card   - mobilepay   - applepay   - anyday   - viabill   - swish   - klarna | [optional]
-**order** | [**\PensoPay\Client\Model\PaymentPaymentOrder**](PaymentPaymentOrder.md) |  | [optional]
+**order** | [**\Pensopay\Client\Model\PaymentPaymentOrder**](PaymentPaymentOrder.md) |  | [optional]
 **order_id** | **string** |  |
 **success_url** | **string** |  | [optional]
 **testmode** | **bool** |  | [optional]

@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * PaymentsApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -152,9 +152,9 @@ class PaymentsApi
      * @param  int $id Id of the payment to anonymize (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['anonymizePayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function anonymizePayment($id, string $contentType = self::contentTypes['anonymizePayment'][0])
     {
@@ -170,9 +170,9 @@ class PaymentsApi
      * @param  int $id Id of the payment to anonymize (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['anonymizePayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function anonymizePaymentWithHttpInfo($id, string $contentType = self::contentTypes['anonymizePayment'][0])
     {
@@ -215,11 +215,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -237,13 +237,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -276,7 +276,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -320,7 +320,7 @@ class PaymentsApi
      */
     public function anonymizePaymentAsyncWithHttpInfo($id, string $contentType = self::contentTypes['anonymizePayment'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->anonymizePaymentRequest($id, $contentType);
 
         return $this->client
@@ -463,9 +463,9 @@ class PaymentsApi
      * @param  int $id Id of the payment to cancel (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function cancelPayment($id, string $contentType = self::contentTypes['cancelPayment'][0])
     {
@@ -481,9 +481,9 @@ class PaymentsApi
      * @param  int $id Id of the payment to cancel (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelPaymentWithHttpInfo($id, string $contentType = self::contentTypes['cancelPayment'][0])
     {
@@ -526,11 +526,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -548,13 +548,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -587,7 +587,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -631,7 +631,7 @@ class PaymentsApi
      */
     public function cancelPaymentAsyncWithHttpInfo($id, string $contentType = self::contentTypes['cancelPayment'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->cancelPaymentRequest($id, $contentType);
 
         return $this->client
@@ -772,12 +772,12 @@ class PaymentsApi
      * Capture payment
      *
      * @param  int $id Id of the payment to capture (required)
-     * @param  \PensoPay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['capturePayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function capturePayment($id, $payment_capture_payment_request = null, string $contentType = self::contentTypes['capturePayment'][0])
     {
@@ -791,12 +791,12 @@ class PaymentsApi
      * Capture payment
      *
      * @param  int $id Id of the payment to capture (required)
-     * @param  \PensoPay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['capturePayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function capturePaymentWithHttpInfo($id, $payment_capture_payment_request = null, string $contentType = self::contentTypes['capturePayment'][0])
     {
@@ -839,11 +839,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -861,13 +861,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -900,7 +900,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -916,7 +916,7 @@ class PaymentsApi
      * Capture payment
      *
      * @param  int $id Id of the payment to capture (required)
-     * @param  \PensoPay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['capturePayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -938,7 +938,7 @@ class PaymentsApi
      * Capture payment
      *
      * @param  int $id Id of the payment to capture (required)
-     * @param  \PensoPay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['capturePayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -946,7 +946,7 @@ class PaymentsApi
      */
     public function capturePaymentAsyncWithHttpInfo($id, $payment_capture_payment_request = null, string $contentType = self::contentTypes['capturePayment'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->capturePaymentRequest($id, $payment_capture_payment_request, $contentType);
 
         return $this->client
@@ -989,7 +989,7 @@ class PaymentsApi
      * Create request for operation 'capturePayment'
      *
      * @param  int $id Id of the payment to capture (required)
-     * @param  \PensoPay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentCapturePaymentRequest $payment_capture_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['capturePayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1095,12 +1095,12 @@ class PaymentsApi
      *
      * Create new payment
      *
-     * @param  \PensoPay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
+     * @param  \Pensopay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function createPayment($payment_create_payment_request, string $contentType = self::contentTypes['createPayment'][0])
     {
@@ -1113,12 +1113,12 @@ class PaymentsApi
      *
      * Create new payment
      *
-     * @param  \PensoPay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
+     * @param  \Pensopay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPaymentWithHttpInfo($payment_create_payment_request, string $contentType = self::contentTypes['createPayment'][0])
     {
@@ -1161,11 +1161,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 201:
-                    if ('\PensoPay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1183,13 +1183,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1222,7 +1222,7 @@ class PaymentsApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1237,7 +1237,7 @@ class PaymentsApi
      *
      * Create new payment
      *
-     * @param  \PensoPay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
+     * @param  \Pensopay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1258,7 +1258,7 @@ class PaymentsApi
      *
      * Create new payment
      *
-     * @param  \PensoPay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
+     * @param  \Pensopay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1266,7 +1266,7 @@ class PaymentsApi
      */
     public function createPaymentAsyncWithHttpInfo($payment_create_payment_request, string $contentType = self::contentTypes['createPayment'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->createPaymentRequest($payment_create_payment_request, $contentType);
 
         return $this->client
@@ -1308,7 +1308,7 @@ class PaymentsApi
     /**
      * Create request for operation 'createPayment'
      *
-     * @param  \PensoPay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
+     * @param  \Pensopay\Client\Model\PaymentCreatePaymentRequest $payment_create_payment_request payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1408,9 +1408,9 @@ class PaymentsApi
      * @param  int $id Id of the payment to get (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function getPayment($id, string $contentType = self::contentTypes['getPayment'][0])
     {
@@ -1426,9 +1426,9 @@ class PaymentsApi
      * @param  int $id Id of the payment to get (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentWithHttpInfo($id, string $contentType = self::contentTypes['getPayment'][0])
     {
@@ -1471,11 +1471,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1493,13 +1493,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1532,7 +1532,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1576,7 +1576,7 @@ class PaymentsApi
      */
     public function getPaymentAsyncWithHttpInfo($id, string $contentType = self::contentTypes['getPayment'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->getPaymentRequest($id, $contentType);
 
         return $this->client
@@ -1720,9 +1720,9 @@ class PaymentsApi
      * @param  string $type Filter events by type (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentEvents'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\GetPaymentEvents200Response
+     * @return \Pensopay\Client\Model\GetPaymentEvents200Response
      */
     public function getPaymentEvents($id, $type = null, string $contentType = self::contentTypes['getPaymentEvents'][0])
     {
@@ -1739,9 +1739,9 @@ class PaymentsApi
      * @param  string $type Filter events by type (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPaymentEvents'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\GetPaymentEvents200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\GetPaymentEvents200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentEventsWithHttpInfo($id, $type = null, string $contentType = self::contentTypes['getPaymentEvents'][0])
     {
@@ -1784,11 +1784,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\GetPaymentEvents200Response' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\GetPaymentEvents200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\GetPaymentEvents200Response' !== 'string') {
+                        if ('\Pensopay\Client\Model\GetPaymentEvents200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1806,13 +1806,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\GetPaymentEvents200Response', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\GetPaymentEvents200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\GetPaymentEvents200Response';
+            $returnType = '\Pensopay\Client\Model\GetPaymentEvents200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1845,7 +1845,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\GetPaymentEvents200Response',
+                        '\Pensopay\Client\Model\GetPaymentEvents200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1891,7 +1891,7 @@ class PaymentsApi
      */
     public function getPaymentEventsAsyncWithHttpInfo($id, $type = null, string $contentType = self::contentTypes['getPaymentEvents'][0])
     {
-        $returnType = '\PensoPay\Client\Model\GetPaymentEvents200Response';
+        $returnType = '\Pensopay\Client\Model\GetPaymentEvents200Response';
         $request = $this->getPaymentEventsRequest($id, $type, $contentType);
 
         return $this->client
@@ -2052,9 +2052,9 @@ class PaymentsApi
      * @param  string $updated_before Find payment updated before (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPayments'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentsResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentsResponse
      */
     public function getPayments($order_id = null, $per_page = null, $page = null, $currency = null, $date_from = null, $date_to = null, $updated_after = null, $updated_before = null, string $contentType = self::contentTypes['getPayments'][0])
     {
@@ -2077,9 +2077,9 @@ class PaymentsApi
      * @param  string $updated_before Find payment updated before (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getPayments'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentsWithHttpInfo($order_id = null, $per_page = null, $page = null, $currency = null, $date_from = null, $date_to = null, $updated_after = null, $updated_before = null, string $contentType = self::contentTypes['getPayments'][0])
     {
@@ -2122,11 +2122,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentPaymentsResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentsResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentsResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2144,13 +2144,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentsResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2183,7 +2183,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentsResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2241,7 +2241,7 @@ class PaymentsApi
      */
     public function getPaymentsAsyncWithHttpInfo($order_id = null, $per_page = null, $page = null, $currency = null, $date_from = null, $date_to = null, $updated_after = null, $updated_before = null, string $contentType = self::contentTypes['getPayments'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentsResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentsResponse';
         $request = $this->getPaymentsRequest($order_id, $per_page, $page, $currency, $date_from, $date_to, $updated_after, $updated_before, $contentType);
 
         return $this->client
@@ -2454,12 +2454,12 @@ class PaymentsApi
      * Refund payment
      *
      * @param  int $id Id of the payment to refund (required)
-     * @param  \PensoPay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function refundPayment($id, $payment_refund_payment_request = null, string $contentType = self::contentTypes['refundPayment'][0])
     {
@@ -2473,12 +2473,12 @@ class PaymentsApi
      * Refund payment
      *
      * @param  int $id Id of the payment to refund (required)
-     * @param  \PensoPay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundPayment'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function refundPaymentWithHttpInfo($id, $payment_refund_payment_request = null, string $contentType = self::contentTypes['refundPayment'][0])
     {
@@ -2521,11 +2521,11 @@ class PaymentsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentPaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentPaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentPaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2543,13 +2543,13 @@ class PaymentsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentPaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentPaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2582,7 +2582,7 @@ class PaymentsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentPaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2598,7 +2598,7 @@ class PaymentsApi
      * Refund payment
      *
      * @param  int $id Id of the payment to refund (required)
-     * @param  \PensoPay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundPayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2620,7 +2620,7 @@ class PaymentsApi
      * Refund payment
      *
      * @param  int $id Id of the payment to refund (required)
-     * @param  \PensoPay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundPayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2628,7 +2628,7 @@ class PaymentsApi
      */
     public function refundPaymentAsyncWithHttpInfo($id, $payment_refund_payment_request = null, string $contentType = self::contentTypes['refundPayment'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentPaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->refundPaymentRequest($id, $payment_refund_payment_request, $contentType);
 
         return $this->client
@@ -2671,7 +2671,7 @@ class PaymentsApi
      * Create request for operation 'refundPayment'
      *
      * @param  int $id Id of the payment to refund (required)
-     * @param  \PensoPay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
+     * @param  \Pensopay\Client\Model\PaymentRefundPaymentRequest $payment_refund_payment_request payment (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['refundPayment'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

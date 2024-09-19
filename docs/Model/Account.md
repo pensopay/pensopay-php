@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **company** | **string** |  | [optional]
 **vat_number** | **string** |  | [optional]
 **url** | **string** |  | [optional]
+**version** | **string** |  | [optional]
 **email** | **string** |  | [optional]
 **private_key** | **string** |  | [optional]
 

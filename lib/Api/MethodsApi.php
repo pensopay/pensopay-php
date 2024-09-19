@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * MethodsApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -136,9 +136,9 @@ class MethodsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethods'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\Methods
+     * @return \Pensopay\Client\Model\Methods
      */
     public function getMethods(string $contentType = self::contentTypes['getMethods'][0])
     {
@@ -153,9 +153,9 @@ class MethodsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMethods'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\Methods, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\Methods, HTTP status code, HTTP response headers (array of strings)
      */
     public function getMethodsWithHttpInfo(string $contentType = self::contentTypes['getMethods'][0])
     {
@@ -198,11 +198,11 @@ class MethodsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\Methods' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\Methods' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\Methods' !== 'string') {
+                        if ('\Pensopay\Client\Model\Methods' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -220,13 +220,13 @@ class MethodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\Methods', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\Methods', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\Methods';
+            $returnType = '\Pensopay\Client\Model\Methods';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -259,7 +259,7 @@ class MethodsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\Methods',
+                        '\Pensopay\Client\Model\Methods',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -301,7 +301,7 @@ class MethodsApi
      */
     public function getMethodsAsyncWithHttpInfo(string $contentType = self::contentTypes['getMethods'][0])
     {
-        $returnType = '\PensoPay\Client\Model\Methods';
+        $returnType = '\Pensopay\Client\Model\Methods';
         $request = $this->getMethodsRequest($contentType);
 
         return $this->client
@@ -427,7 +427,7 @@ class MethodsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMobilepayLogo'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
@@ -444,7 +444,7 @@ class MethodsApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getMobilepayLogo'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
@@ -719,9 +719,9 @@ class MethodsApi
      * @param  \SplFileObject $body body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putMobilepayLogo'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|\PensoPay\Client\Model\ErrorMessage
+     * @return \SplFileObject|\Pensopay\Client\Model\ErrorMessage
      */
     public function putMobilepayLogo($body, string $contentType = self::contentTypes['putMobilepayLogo'][0])
     {
@@ -737,9 +737,9 @@ class MethodsApi
      * @param  \SplFileObject $body (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['putMobilepayLogo'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\PensoPay\Client\Model\ErrorMessage, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject|\Pensopay\Client\Model\ErrorMessage, HTTP status code, HTTP response headers (array of strings)
      */
     public function putMobilepayLogoWithHttpInfo($body, string $contentType = self::contentTypes['putMobilepayLogo'][0])
     {
@@ -809,11 +809,11 @@ class MethodsApi
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\PensoPay\Client\Model\ErrorMessage' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\ErrorMessage' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\ErrorMessage' !== 'string') {
+                        if ('\Pensopay\Client\Model\ErrorMessage' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -831,7 +831,7 @@ class MethodsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\ErrorMessage', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\ErrorMessage', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -878,7 +878,7 @@ class MethodsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\ErrorMessage',
+                        '\Pensopay\Client\Model\ErrorMessage',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * TransactionResponse Class Doc Comment
  *
  * @category Class
  * @description 
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -73,7 +73,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess, \JsonSerializa
         'region' => 'string',
         'payment_method' => 'string',
         'status' => 'object',
-        'settlement' => '\PensoPay\Client\Model\TransactionSettlement'
+        'settlement' => '\Pensopay\Client\Model\TransactionResponseSettlement'
     ];
 
     /**
@@ -753,7 +753,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets status
      *
-     * @param object|null $status 
+     * @param object|null $status status
      *
      * @return self
      */
@@ -770,7 +770,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets settlement
      *
-     * @return \PensoPay\Client\Model\TransactionSettlement|null
+     * @return \Pensopay\Client\Model\TransactionResponseSettlement|null
      */
     public function getSettlement()
     {
@@ -780,7 +780,7 @@ class TransactionResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets settlement
      *
-     * @param \PensoPay\Client\Model\TransactionSettlement|null $settlement settlement
+     * @param \Pensopay\Client\Model\TransactionResponseSettlement|null $settlement settlement
      *
      * @return self
      */

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * PaymentPaymentsResponse Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,8 +58,8 @@ class PaymentPaymentsResponse implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\PensoPay\Client\Model\PaymentPaymentResponse[]',
-        'meta' => '\PensoPay\Client\Model\PaymentPaymentsMeta'
+        'data' => '\Pensopay\Client\Model\PaymentPaymentResponse[]',
+        'meta' => '\Pensopay\Client\Model\PaymentPaymentsMeta'
     ];
 
     /**
@@ -306,7 +306,7 @@ class PaymentPaymentsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets data
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentResponse[]
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse[]
      */
     public function getData()
     {
@@ -316,7 +316,7 @@ class PaymentPaymentsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets data
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentResponse[] $data data
+     * @param \Pensopay\Client\Model\PaymentPaymentResponse[] $data data
      *
      * @return self
      */
@@ -333,7 +333,7 @@ class PaymentPaymentsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Gets meta
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentsMeta
+     * @return \Pensopay\Client\Model\PaymentPaymentsMeta
      */
     public function getMeta()
     {
@@ -343,7 +343,7 @@ class PaymentPaymentsResponse implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets meta
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentsMeta $meta meta
+     * @param \Pensopay\Client\Model\PaymentPaymentsMeta $meta meta
      *
      * @return self
      */

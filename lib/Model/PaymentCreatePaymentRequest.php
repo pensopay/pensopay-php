@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * PaymentCreatePaymentRequest Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,7 +66,7 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
         'currency' => 'string',
         'locale' => 'string',
         'methods' => 'string[]',
-        'order' => '\PensoPay\Client\Model\PaymentPaymentOrder',
+        'order' => '\Pensopay\Client\Model\PaymentPaymentOrder',
         'order_id' => 'string',
         'success_url' => 'string',
         'testmode' => 'bool',
@@ -428,6 +428,10 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
             $invalidProperties[] = "invalid value for 'order_id', the character length must be bigger than or equal to 1.";
         }
 
+        if (!preg_match("/^[a-zA-Z0-9_\\-]*$/", $this->container['order_id'])) {
+            $invalidProperties[] = "invalid value for 'order_id', must be conform to the pattern /^[a-zA-Z0-9_\\-]*$/.";
+        }
+
         if (!is_null($this->container['success_url']) && !preg_match("/^https:\/\//", $this->container['success_url'])) {
             $invalidProperties[] = "invalid value for 'success_url', must be conform to the pattern /^https:\/\//.";
         }
@@ -697,7 +701,7 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets order
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentOrder|null
+     * @return \Pensopay\Client\Model\PaymentPaymentOrder|null
      */
     public function getOrder()
     {
@@ -707,7 +711,7 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets order
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentOrder|null $order order
+     * @param \Pensopay\Client\Model\PaymentPaymentOrder|null $order order
      *
      * @return self
      */
@@ -748,6 +752,9 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
         }
         if ((mb_strlen($order_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $order_id when calling PaymentCreatePaymentRequest., must be bigger than or equal to 1.');
+        }
+        if ((!preg_match("/^[a-zA-Z0-9_\\-]*$/", ObjectSerializer::toString($order_id)))) {
+            throw new \InvalidArgumentException("invalid value for \$order_id when calling PaymentCreatePaymentRequest., must conform to the pattern /^[a-zA-Z0-9_\\-]*$/.");
         }
 
         $this->container['order_id'] = $order_id;

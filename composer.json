@@ -32,9 +32,9 @@
         "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
-        "psr-4": { "PensoPay\\Client\\" : "lib/" }
+        "psr-4": { "Pensopay\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "PensoPay\\Client\\Test\\" : "test/" }
+        "psr-4": { "Pensopay\\Client\\Test\\" : "test/" }
     }
 }

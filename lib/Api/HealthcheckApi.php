@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * HealthcheckApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -133,7 +133,7 @@ class HealthcheckApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pingGet'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -150,7 +150,7 @@ class HealthcheckApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pingGet'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
@@ -424,7 +424,7 @@ class HealthcheckApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pingPost'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return string
      */
@@ -441,7 +441,7 @@ class HealthcheckApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pingPost'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */

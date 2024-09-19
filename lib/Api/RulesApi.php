@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * RulesApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -135,12 +135,12 @@ class RulesApi
     /**
      * Operation createRule
      *
-     * @param  \PensoPay\Client\Model\NewRule $new_rule new_rule (required)
+     * @param  \Pensopay\Client\Model\NewRule $new_rule new_rule (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRule'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\RuleResponse
+     * @return \Pensopay\Client\Model\RuleResponse
      */
     public function createRule($new_rule, string $contentType = self::contentTypes['createRule'][0])
     {
@@ -151,12 +151,12 @@ class RulesApi
     /**
      * Operation createRuleWithHttpInfo
      *
-     * @param  \PensoPay\Client\Model\NewRule $new_rule (required)
+     * @param  \Pensopay\Client\Model\NewRule $new_rule (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRule'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRuleWithHttpInfo($new_rule, string $contentType = self::contentTypes['createRule'][0])
     {
@@ -199,11 +199,11 @@ class RulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\RuleResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\RuleResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\RuleResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\RuleResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -221,13 +221,13 @@ class RulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\RuleResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\RuleResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\RuleResponse';
+            $returnType = '\Pensopay\Client\Model\RuleResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -260,7 +260,7 @@ class RulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\RuleResponse',
+                        '\Pensopay\Client\Model\RuleResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -273,7 +273,7 @@ class RulesApi
     /**
      * Operation createRuleAsync
      *
-     * @param  \PensoPay\Client\Model\NewRule $new_rule (required)
+     * @param  \Pensopay\Client\Model\NewRule $new_rule (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -292,7 +292,7 @@ class RulesApi
     /**
      * Operation createRuleAsyncWithHttpInfo
      *
-     * @param  \PensoPay\Client\Model\NewRule $new_rule (required)
+     * @param  \Pensopay\Client\Model\NewRule $new_rule (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -300,7 +300,7 @@ class RulesApi
      */
     public function createRuleAsyncWithHttpInfo($new_rule, string $contentType = self::contentTypes['createRule'][0])
     {
-        $returnType = '\PensoPay\Client\Model\RuleResponse';
+        $returnType = '\Pensopay\Client\Model\RuleResponse';
         $request = $this->createRuleRequest($new_rule, $contentType);
 
         return $this->client
@@ -342,7 +342,7 @@ class RulesApi
     /**
      * Create request for operation 'createRule'
      *
-     * @param  \PensoPay\Client\Model\NewRule $new_rule (required)
+     * @param  \Pensopay\Client\Model\NewRule $new_rule (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -440,7 +440,7 @@ class RulesApi
      * @param  int $id Id for the payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRule'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return void
      */
@@ -455,7 +455,7 @@ class RulesApi
      * @param  int $id Id for the payment (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['deleteRule'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -664,9 +664,9 @@ class RulesApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRules'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\GetRules200Response
+     * @return \Pensopay\Client\Model\GetRules200Response
      */
     public function getRules(string $contentType = self::contentTypes['getRules'][0])
     {
@@ -679,9 +679,9 @@ class RulesApi
      *
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getRules'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\GetRules200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\GetRules200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRulesWithHttpInfo(string $contentType = self::contentTypes['getRules'][0])
     {
@@ -724,11 +724,11 @@ class RulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\GetRules200Response' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\GetRules200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\GetRules200Response' !== 'string') {
+                        if ('\Pensopay\Client\Model\GetRules200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -746,13 +746,13 @@ class RulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\GetRules200Response', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\GetRules200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\GetRules200Response';
+            $returnType = '\Pensopay\Client\Model\GetRules200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -785,7 +785,7 @@ class RulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\GetRules200Response',
+                        '\Pensopay\Client\Model\GetRules200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -823,7 +823,7 @@ class RulesApi
      */
     public function getRulesAsyncWithHttpInfo(string $contentType = self::contentTypes['getRules'][0])
     {
-        $returnType = '\PensoPay\Client\Model\GetRules200Response';
+        $returnType = '\Pensopay\Client\Model\GetRules200Response';
         $request = $this->getRulesRequest($contentType);
 
         return $this->client
@@ -946,12 +946,12 @@ class RulesApi
      * Operation updateRule
      *
      * @param  int $id Id for the payment (required)
-     * @param  \PensoPay\Client\Model\RuleBase $rule_base rule_base (required)
+     * @param  \Pensopay\Client\Model\RuleBase $rule_base rule_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRule'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\RuleResponse
+     * @return \Pensopay\Client\Model\RuleResponse
      */
     public function updateRule($id, $rule_base, string $contentType = self::contentTypes['updateRule'][0])
     {
@@ -963,12 +963,12 @@ class RulesApi
      * Operation updateRuleWithHttpInfo
      *
      * @param  int $id Id for the payment (required)
-     * @param  \PensoPay\Client\Model\RuleBase $rule_base (required)
+     * @param  \Pensopay\Client\Model\RuleBase $rule_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRule'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateRuleWithHttpInfo($id, $rule_base, string $contentType = self::contentTypes['updateRule'][0])
     {
@@ -1011,11 +1011,11 @@ class RulesApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\RuleResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\RuleResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\RuleResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\RuleResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1033,13 +1033,13 @@ class RulesApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\RuleResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\RuleResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\RuleResponse';
+            $returnType = '\Pensopay\Client\Model\RuleResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1072,7 +1072,7 @@ class RulesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\RuleResponse',
+                        '\Pensopay\Client\Model\RuleResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1086,7 +1086,7 @@ class RulesApi
      * Operation updateRuleAsync
      *
      * @param  int $id Id for the payment (required)
-     * @param  \PensoPay\Client\Model\RuleBase $rule_base (required)
+     * @param  \Pensopay\Client\Model\RuleBase $rule_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1106,7 +1106,7 @@ class RulesApi
      * Operation updateRuleAsyncWithHttpInfo
      *
      * @param  int $id Id for the payment (required)
-     * @param  \PensoPay\Client\Model\RuleBase $rule_base (required)
+     * @param  \Pensopay\Client\Model\RuleBase $rule_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1114,7 +1114,7 @@ class RulesApi
      */
     public function updateRuleAsyncWithHttpInfo($id, $rule_base, string $contentType = self::contentTypes['updateRule'][0])
     {
-        $returnType = '\PensoPay\Client\Model\RuleResponse';
+        $returnType = '\Pensopay\Client\Model\RuleResponse';
         $request = $this->updateRuleRequest($id, $rule_base, $contentType);
 
         return $this->client
@@ -1157,7 +1157,7 @@ class RulesApi
      * Create request for operation 'updateRule'
      *
      * @param  int $id Id for the payment (required)
-     * @param  \PensoPay\Client\Model\RuleBase $rule_base (required)
+     * @param  \Pensopay\Client\Model\RuleBase $rule_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateRule'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

@@ -60,6 +60,7 @@ docs/Model/SubscriptionResponse.md
 docs/Model/TestFeeRequest.md
 docs/Model/TestFeeResponse.md
 docs/Model/TransactionResponse.md
+docs/Model/TransactionResponseSettlement.md
 docs/Model/TransactionSettlement.md
 docs/Model/TransactionSettlementFeeDetail.md
 docs/Model/TransactionsResponse.md
@@ -127,6 +128,7 @@ lib/Model/SubscriptionResponse.php
 lib/Model/TestFeeRequest.php
 lib/Model/TestFeeResponse.php
 lib/Model/TransactionResponse.php
+lib/Model/TransactionResponseSettlement.php
 lib/Model/TransactionSettlement.php
 lib/Model/TransactionSettlementFeeDetail.php
 lib/Model/TransactionsResponse.php
@@ -135,3 +137,4 @@ lib/Model/UpdateRule.php
 lib/Model/UpdateSubscriptionRequest.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Model/TransactionResponseSettlementTest.php

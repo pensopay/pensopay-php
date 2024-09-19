@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * Settlement Class Doc Comment
  *
  * @category Class
  * @description Settlement Struct
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,12 +62,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'settled' => 'bool',
         'currency' => 'string',
-        'period' => '\PensoPay\Client\Model\SettlementPeriod',
-        'payout' => '\PensoPay\Client\Model\SettlementPayoutReserve',
-        'summary' => '\PensoPay\Client\Model\SettlementSummary',
-        'reserve' => '\PensoPay\Client\Model\SettlementPayoutReserve',
-        'fees' => '\PensoPay\Client\Model\SettlementFees',
-        'other_postings' => '\PensoPay\Client\Model\SettlementPosting[]'
+        'period' => '\Pensopay\Client\Model\SettlementPeriod',
+        'payout' => '\Pensopay\Client\Model\SettlementPayoutReserve',
+        'summary' => '\Pensopay\Client\Model\SettlementSummary',
+        'reserve' => '\Pensopay\Client\Model\SettlementPayoutReserve',
+        'fees' => '\Pensopay\Client\Model\SettlementFees',
+        'other_postings' => '\Pensopay\Client\Model\SettlementPosting[]'
     ];
 
     /**
@@ -431,7 +431,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets period
      *
-     * @return \PensoPay\Client\Model\SettlementPeriod|null
+     * @return \Pensopay\Client\Model\SettlementPeriod|null
      */
     public function getPeriod()
     {
@@ -441,7 +441,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets period
      *
-     * @param \PensoPay\Client\Model\SettlementPeriod|null $period period
+     * @param \Pensopay\Client\Model\SettlementPeriod|null $period period
      *
      * @return self
      */
@@ -458,7 +458,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets payout
      *
-     * @return \PensoPay\Client\Model\SettlementPayoutReserve|null
+     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
      */
     public function getPayout()
     {
@@ -468,7 +468,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payout
      *
-     * @param \PensoPay\Client\Model\SettlementPayoutReserve|null $payout payout
+     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $payout payout
      *
      * @return self
      */
@@ -485,7 +485,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets summary
      *
-     * @return \PensoPay\Client\Model\SettlementSummary|null
+     * @return \Pensopay\Client\Model\SettlementSummary|null
      */
     public function getSummary()
     {
@@ -495,7 +495,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets summary
      *
-     * @param \PensoPay\Client\Model\SettlementSummary|null $summary summary
+     * @param \Pensopay\Client\Model\SettlementSummary|null $summary summary
      *
      * @return self
      */
@@ -512,7 +512,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets reserve
      *
-     * @return \PensoPay\Client\Model\SettlementPayoutReserve|null
+     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
      */
     public function getReserve()
     {
@@ -522,7 +522,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets reserve
      *
-     * @param \PensoPay\Client\Model\SettlementPayoutReserve|null $reserve reserve
+     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $reserve reserve
      *
      * @return self
      */
@@ -539,7 +539,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets fees
      *
-     * @return \PensoPay\Client\Model\SettlementFees|null
+     * @return \Pensopay\Client\Model\SettlementFees|null
      */
     public function getFees()
     {
@@ -549,7 +549,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fees
      *
-     * @param \PensoPay\Client\Model\SettlementFees|null $fees fees
+     * @param \Pensopay\Client\Model\SettlementFees|null $fees fees
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets other_postings
      *
-     * @return \PensoPay\Client\Model\SettlementPosting[]|null
+     * @return \Pensopay\Client\Model\SettlementPosting[]|null
      */
     public function getOtherPostings()
     {
@@ -576,7 +576,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets other_postings
      *
-     * @param \PensoPay\Client\Model\SettlementPosting[]|null $other_postings 
+     * @param \Pensopay\Client\Model\SettlementPosting[]|null $other_postings 
      *
      * @return self
      */

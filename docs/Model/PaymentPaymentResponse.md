@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **link** | **string** |  |
 **link_uuid** | **string** |  |
 **methods** | **string[]** |  |
-**order** | [**\PensoPay\Client\Model\PaymentPaymentOrder**](PaymentPaymentOrder.md) |  |
+**order** | [**\Pensopay\Client\Model\PaymentPaymentOrder**](PaymentPaymentOrder.md) |  |
 **order_id** | **string** |  |
 **reference** | **string** |  |
 **refunded** | **int** |  |
@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **testmode** | **bool** |  |
 **updated_at** | **string** |  |
 **variables** | **array<string,string>** |  |
+**payment_details** | **array<string,string>** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

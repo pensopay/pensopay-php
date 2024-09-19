@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * SubscriptionsApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -158,9 +158,9 @@ class SubscriptionsApi
      * @param  int $subscription The subscription ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelSubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\SubscriptionResponse
+     * @return \Pensopay\Client\Model\SubscriptionResponse
      */
     public function cancelSubscription($subscription, string $contentType = self::contentTypes['cancelSubscription'][0])
     {
@@ -176,9 +176,9 @@ class SubscriptionsApi
      * @param  int $subscription The subscription ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cancelSubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSubscriptionWithHttpInfo($subscription, string $contentType = self::contentTypes['cancelSubscription'][0])
     {
@@ -221,11 +221,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\SubscriptionResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\SubscriptionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -243,13 +243,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\SubscriptionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\SubscriptionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+            $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -282,7 +282,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\SubscriptionResponse',
+                        '\Pensopay\Client\Model\SubscriptionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -326,7 +326,7 @@ class SubscriptionsApi
      */
     public function cancelSubscriptionAsyncWithHttpInfo($subscription, string $contentType = self::contentTypes['cancelSubscription'][0])
     {
-        $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+        $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
         $request = $this->cancelSubscriptionRequest($subscription, $contentType);
 
         return $this->client
@@ -467,12 +467,12 @@ class SubscriptionsApi
      * Create a new mandate
      *
      * @param  int $subscription Subscription ID. (required)
-     * @param  \PensoPay\Client\Model\NewMandate $new_mandate new_mandate (required)
+     * @param  \Pensopay\Client\Model\NewMandate $new_mandate new_mandate (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewMandate'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\MandateResponse
+     * @return \Pensopay\Client\Model\MandateResponse
      */
     public function createANewMandate($subscription, $new_mandate, string $contentType = self::contentTypes['createANewMandate'][0])
     {
@@ -486,12 +486,12 @@ class SubscriptionsApi
      * Create a new mandate
      *
      * @param  int $subscription Subscription ID. (required)
-     * @param  \PensoPay\Client\Model\NewMandate $new_mandate (required)
+     * @param  \Pensopay\Client\Model\NewMandate $new_mandate (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewMandate'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\MandateResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\MandateResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createANewMandateWithHttpInfo($subscription, $new_mandate, string $contentType = self::contentTypes['createANewMandate'][0])
     {
@@ -534,11 +534,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\MandateResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\MandateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\MandateResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\MandateResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -556,13 +556,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\MandateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\MandateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\MandateResponse';
+            $returnType = '\Pensopay\Client\Model\MandateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -595,7 +595,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\MandateResponse',
+                        '\Pensopay\Client\Model\MandateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -611,7 +611,7 @@ class SubscriptionsApi
      * Create a new mandate
      *
      * @param  int $subscription Subscription ID. (required)
-     * @param  \PensoPay\Client\Model\NewMandate $new_mandate (required)
+     * @param  \Pensopay\Client\Model\NewMandate $new_mandate (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewMandate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -633,7 +633,7 @@ class SubscriptionsApi
      * Create a new mandate
      *
      * @param  int $subscription Subscription ID. (required)
-     * @param  \PensoPay\Client\Model\NewMandate $new_mandate (required)
+     * @param  \Pensopay\Client\Model\NewMandate $new_mandate (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewMandate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -641,7 +641,7 @@ class SubscriptionsApi
      */
     public function createANewMandateAsyncWithHttpInfo($subscription, $new_mandate, string $contentType = self::contentTypes['createANewMandate'][0])
     {
-        $returnType = '\PensoPay\Client\Model\MandateResponse';
+        $returnType = '\Pensopay\Client\Model\MandateResponse';
         $request = $this->createANewMandateRequest($subscription, $new_mandate, $contentType);
 
         return $this->client
@@ -684,7 +684,7 @@ class SubscriptionsApi
      * Create request for operation 'createANewMandate'
      *
      * @param  int $subscription Subscription ID. (required)
-     * @param  \PensoPay\Client\Model\NewMandate $new_mandate (required)
+     * @param  \Pensopay\Client\Model\NewMandate $new_mandate (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewMandate'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -796,12 +796,12 @@ class SubscriptionsApi
      *
      * Create a new subscription
      *
-     * @param  \PensoPay\Client\Model\CreateSubscriptionRequest $create_subscription_request create_subscription_request (required)
+     * @param  \Pensopay\Client\Model\CreateSubscriptionRequest $create_subscription_request create_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewSubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\SubscriptionResponse
+     * @return \Pensopay\Client\Model\SubscriptionResponse
      */
     public function createANewSubscription($create_subscription_request, string $contentType = self::contentTypes['createANewSubscription'][0])
     {
@@ -814,12 +814,12 @@ class SubscriptionsApi
      *
      * Create a new subscription
      *
-     * @param  \PensoPay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
+     * @param  \Pensopay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewSubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createANewSubscriptionWithHttpInfo($create_subscription_request, string $contentType = self::contentTypes['createANewSubscription'][0])
     {
@@ -862,11 +862,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\SubscriptionResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\SubscriptionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -884,13 +884,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\SubscriptionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\SubscriptionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+            $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -923,7 +923,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\SubscriptionResponse',
+                        '\Pensopay\Client\Model\SubscriptionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -938,7 +938,7 @@ class SubscriptionsApi
      *
      * Create a new subscription
      *
-     * @param  \PensoPay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
+     * @param  \Pensopay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewSubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -959,7 +959,7 @@ class SubscriptionsApi
      *
      * Create a new subscription
      *
-     * @param  \PensoPay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
+     * @param  \Pensopay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewSubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -967,7 +967,7 @@ class SubscriptionsApi
      */
     public function createANewSubscriptionAsyncWithHttpInfo($create_subscription_request, string $contentType = self::contentTypes['createANewSubscription'][0])
     {
-        $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+        $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
         $request = $this->createANewSubscriptionRequest($create_subscription_request, $contentType);
 
         return $this->client
@@ -1009,7 +1009,7 @@ class SubscriptionsApi
     /**
      * Create request for operation 'createANewSubscription'
      *
-     * @param  \PensoPay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
+     * @param  \Pensopay\Client\Model\CreateSubscriptionRequest $create_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createANewSubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1107,12 +1107,12 @@ class SubscriptionsApi
      * Create payment
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\PaymentBase $payment_base payment_base (required)
+     * @param  \Pensopay\Client\Model\PaymentBase $payment_base payment_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment1'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\PaymentResponse
+     * @return \Pensopay\Client\Model\PaymentResponse
      */
     public function createPayment1($subscription, $payment_base, string $contentType = self::contentTypes['createPayment1'][0])
     {
@@ -1126,12 +1126,12 @@ class SubscriptionsApi
      * Create payment
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\PaymentBase $payment_base (required)
+     * @param  \Pensopay\Client\Model\PaymentBase $payment_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment1'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\PaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPayment1WithHttpInfo($subscription, $payment_base, string $contentType = self::contentTypes['createPayment1'][0])
     {
@@ -1174,11 +1174,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\PaymentResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\PaymentResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\PaymentResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\PaymentResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1196,13 +1196,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\PaymentResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\PaymentResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\PaymentResponse';
+            $returnType = '\Pensopay\Client\Model\PaymentResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1235,7 +1235,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\PaymentResponse',
+                        '\Pensopay\Client\Model\PaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1251,7 +1251,7 @@ class SubscriptionsApi
      * Create payment
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\PaymentBase $payment_base (required)
+     * @param  \Pensopay\Client\Model\PaymentBase $payment_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1273,7 +1273,7 @@ class SubscriptionsApi
      * Create payment
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\PaymentBase $payment_base (required)
+     * @param  \Pensopay\Client\Model\PaymentBase $payment_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1281,7 +1281,7 @@ class SubscriptionsApi
      */
     public function createPayment1AsyncWithHttpInfo($subscription, $payment_base, string $contentType = self::contentTypes['createPayment1'][0])
     {
-        $returnType = '\PensoPay\Client\Model\PaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentResponse';
         $request = $this->createPayment1Request($subscription, $payment_base, $contentType);
 
         return $this->client
@@ -1324,7 +1324,7 @@ class SubscriptionsApi
      * Create request for operation 'createPayment1'
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\PaymentBase $payment_base (required)
+     * @param  \Pensopay\Client\Model\PaymentBase $payment_base (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createPayment1'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1441,9 +1441,9 @@ class SubscriptionsApi
      * @param  int $page What page to view. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAListOfMandates'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\GetAListOfMandates200Response
+     * @return \Pensopay\Client\Model\GetAListOfMandates200Response
      */
     public function getAListOfMandates($subscription, $per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfMandates'][0])
     {
@@ -1461,9 +1461,9 @@ class SubscriptionsApi
      * @param  int $page What page to view. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAListOfMandates'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\GetAListOfMandates200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\GetAListOfMandates200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAListOfMandatesWithHttpInfo($subscription, $per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfMandates'][0])
     {
@@ -1506,11 +1506,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\GetAListOfMandates200Response' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\GetAListOfMandates200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\GetAListOfMandates200Response' !== 'string') {
+                        if ('\Pensopay\Client\Model\GetAListOfMandates200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1528,13 +1528,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\GetAListOfMandates200Response', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\GetAListOfMandates200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\GetAListOfMandates200Response';
+            $returnType = '\Pensopay\Client\Model\GetAListOfMandates200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1567,7 +1567,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\GetAListOfMandates200Response',
+                        '\Pensopay\Client\Model\GetAListOfMandates200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1615,7 +1615,7 @@ class SubscriptionsApi
      */
     public function getAListOfMandatesAsyncWithHttpInfo($subscription, $per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfMandates'][0])
     {
-        $returnType = '\PensoPay\Client\Model\GetAListOfMandates200Response';
+        $returnType = '\Pensopay\Client\Model\GetAListOfMandates200Response';
         $request = $this->getAListOfMandatesRequest($subscription, $per_page, $page, $contentType);
 
         return $this->client
@@ -1781,9 +1781,9 @@ class SubscriptionsApi
      * @param  int $page What page to view. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAListOfSubscriptions'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\GetAListOfSubscriptions200Response
+     * @return \Pensopay\Client\Model\GetAListOfSubscriptions200Response
      */
     public function getAListOfSubscriptions($per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfSubscriptions'][0])
     {
@@ -1800,9 +1800,9 @@ class SubscriptionsApi
      * @param  int $page What page to view. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAListOfSubscriptions'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\GetAListOfSubscriptions200Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\GetAListOfSubscriptions200Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAListOfSubscriptionsWithHttpInfo($per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfSubscriptions'][0])
     {
@@ -1845,11 +1845,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\GetAListOfSubscriptions200Response' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\GetAListOfSubscriptions200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\GetAListOfSubscriptions200Response' !== 'string') {
+                        if ('\Pensopay\Client\Model\GetAListOfSubscriptions200Response' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1867,13 +1867,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\GetAListOfSubscriptions200Response', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\GetAListOfSubscriptions200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\GetAListOfSubscriptions200Response';
+            $returnType = '\Pensopay\Client\Model\GetAListOfSubscriptions200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1906,7 +1906,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\GetAListOfSubscriptions200Response',
+                        '\Pensopay\Client\Model\GetAListOfSubscriptions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1952,7 +1952,7 @@ class SubscriptionsApi
      */
     public function getAListOfSubscriptionsAsyncWithHttpInfo($per_page = null, $page = null, string $contentType = self::contentTypes['getAListOfSubscriptions'][0])
     {
-        $returnType = '\PensoPay\Client\Model\GetAListOfSubscriptions200Response';
+        $returnType = '\Pensopay\Client\Model\GetAListOfSubscriptions200Response';
         $request = $this->getAListOfSubscriptionsRequest($per_page, $page, $contentType);
 
         return $this->client
@@ -2105,9 +2105,9 @@ class SubscriptionsApi
      * @param  int $mandate Mandate ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSingleMandate'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\MandateResponse
+     * @return \Pensopay\Client\Model\MandateResponse
      */
     public function getSingleMandate($subscription, $mandate, string $contentType = self::contentTypes['getSingleMandate'][0])
     {
@@ -2124,9 +2124,9 @@ class SubscriptionsApi
      * @param  int $mandate Mandate ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSingleMandate'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\MandateResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\MandateResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSingleMandateWithHttpInfo($subscription, $mandate, string $contentType = self::contentTypes['getSingleMandate'][0])
     {
@@ -2169,11 +2169,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\MandateResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\MandateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\MandateResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\MandateResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2191,13 +2191,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\MandateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\MandateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\MandateResponse';
+            $returnType = '\Pensopay\Client\Model\MandateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2230,7 +2230,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\MandateResponse',
+                        '\Pensopay\Client\Model\MandateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2276,7 +2276,7 @@ class SubscriptionsApi
      */
     public function getSingleMandateAsyncWithHttpInfo($subscription, $mandate, string $contentType = self::contentTypes['getSingleMandate'][0])
     {
-        $returnType = '\PensoPay\Client\Model\MandateResponse';
+        $returnType = '\Pensopay\Client\Model\MandateResponse';
         $request = $this->getSingleMandateRequest($subscription, $mandate, $contentType);
 
         return $this->client
@@ -2435,9 +2435,9 @@ class SubscriptionsApi
      * @param  int $subscription The subscription ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSingleSubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\SubscriptionResponse
+     * @return \Pensopay\Client\Model\SubscriptionResponse
      */
     public function getSingleSubscription($subscription, string $contentType = self::contentTypes['getSingleSubscription'][0])
     {
@@ -2453,9 +2453,9 @@ class SubscriptionsApi
      * @param  int $subscription The subscription ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSingleSubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSingleSubscriptionWithHttpInfo($subscription, string $contentType = self::contentTypes['getSingleSubscription'][0])
     {
@@ -2498,11 +2498,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\SubscriptionResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\SubscriptionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2520,13 +2520,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\SubscriptionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\SubscriptionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+            $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2559,7 +2559,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\SubscriptionResponse',
+                        '\Pensopay\Client\Model\SubscriptionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2603,7 +2603,7 @@ class SubscriptionsApi
      */
     public function getSingleSubscriptionAsyncWithHttpInfo($subscription, string $contentType = self::contentTypes['getSingleSubscription'][0])
     {
-        $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+        $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
         $request = $this->getSingleSubscriptionRequest($subscription, $contentType);
 
         return $this->client
@@ -2747,9 +2747,9 @@ class SubscriptionsApi
      * @param  int $mandate Mandate ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeAMandate'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\MandateResponse
+     * @return \Pensopay\Client\Model\MandateResponse
      */
     public function revokeAMandate($subscription, $mandate, string $contentType = self::contentTypes['revokeAMandate'][0])
     {
@@ -2766,9 +2766,9 @@ class SubscriptionsApi
      * @param  int $mandate Mandate ID. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['revokeAMandate'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\MandateResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\MandateResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function revokeAMandateWithHttpInfo($subscription, $mandate, string $contentType = self::contentTypes['revokeAMandate'][0])
     {
@@ -2811,11 +2811,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\MandateResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\MandateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\MandateResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\MandateResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -2833,13 +2833,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\MandateResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\MandateResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\MandateResponse';
+            $returnType = '\Pensopay\Client\Model\MandateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2872,7 +2872,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\MandateResponse',
+                        '\Pensopay\Client\Model\MandateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2918,7 +2918,7 @@ class SubscriptionsApi
      */
     public function revokeAMandateAsyncWithHttpInfo($subscription, $mandate, string $contentType = self::contentTypes['revokeAMandate'][0])
     {
-        $returnType = '\PensoPay\Client\Model\MandateResponse';
+        $returnType = '\Pensopay\Client\Model\MandateResponse';
         $request = $this->revokeAMandateRequest($subscription, $mandate, $contentType);
 
         return $this->client
@@ -3075,12 +3075,12 @@ class SubscriptionsApi
      * Update a subscription
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateSubscriptionRequest $update_subscription_request update_subscription_request (required)
+     * @param  \Pensopay\Client\Model\UpdateSubscriptionRequest $update_subscription_request update_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateASubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\SubscriptionResponse
+     * @return \Pensopay\Client\Model\SubscriptionResponse
      */
     public function updateASubscription($subscription, $update_subscription_request, string $contentType = self::contentTypes['updateASubscription'][0])
     {
@@ -3094,12 +3094,12 @@ class SubscriptionsApi
      * Update a subscription
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
+     * @param  \Pensopay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateASubscription'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\SubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateASubscriptionWithHttpInfo($subscription, $update_subscription_request, string $contentType = self::contentTypes['updateASubscription'][0])
     {
@@ -3142,11 +3142,11 @@ class SubscriptionsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\SubscriptionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\SubscriptionResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\SubscriptionResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -3164,13 +3164,13 @@ class SubscriptionsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\SubscriptionResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\SubscriptionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+            $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3203,7 +3203,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\SubscriptionResponse',
+                        '\Pensopay\Client\Model\SubscriptionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3219,7 +3219,7 @@ class SubscriptionsApi
      * Update a subscription
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
+     * @param  \Pensopay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateASubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3241,7 +3241,7 @@ class SubscriptionsApi
      * Update a subscription
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
+     * @param  \Pensopay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateASubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -3249,7 +3249,7 @@ class SubscriptionsApi
      */
     public function updateASubscriptionAsyncWithHttpInfo($subscription, $update_subscription_request, string $contentType = self::contentTypes['updateASubscription'][0])
     {
-        $returnType = '\PensoPay\Client\Model\SubscriptionResponse';
+        $returnType = '\Pensopay\Client\Model\SubscriptionResponse';
         $request = $this->updateASubscriptionRequest($subscription, $update_subscription_request, $contentType);
 
         return $this->client
@@ -3292,7 +3292,7 @@ class SubscriptionsApi
      * Create request for operation 'updateASubscription'
      *
      * @param  int $subscription The subscription ID. (required)
-     * @param  \PensoPay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
+     * @param  \Pensopay\Client\Model\UpdateSubscriptionRequest $update_subscription_request (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['updateASubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

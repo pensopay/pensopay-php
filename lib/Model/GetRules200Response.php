@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * GetRules200Response Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class GetRules200Response implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\PensoPay\Client\Model\RuleResponse[]'
+        'data' => '\Pensopay\Client\Model\RuleResponse[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class GetRules200Response implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return \PensoPay\Client\Model\RuleResponse[]|null
+     * @return \Pensopay\Client\Model\RuleResponse[]|null
      */
     public function getData()
     {
@@ -303,7 +303,7 @@ class GetRules200Response implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param \PensoPay\Client\Model\RuleResponse[]|null $data data
+     * @param \Pensopay\Client\Model\RuleResponse[]|null $data data
      *
      * @return self
      */

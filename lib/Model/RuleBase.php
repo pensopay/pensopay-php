@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * RuleBase Class Doc Comment
  *
  * @category Class
  * @description A rule
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -61,7 +61,7 @@ class RuleBase implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'action' => 'string',
         'operator' => 'string',
-        'conditions' => '\PensoPay\Client\Model\ConditionBase[]'
+        'conditions' => '\Pensopay\Client\Model\ConditionBase[]'
     ];
 
     /**
@@ -432,7 +432,7 @@ class RuleBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets conditions
      *
-     * @return \PensoPay\Client\Model\ConditionBase[]|null
+     * @return \Pensopay\Client\Model\ConditionBase[]|null
      */
     public function getConditions()
     {
@@ -442,7 +442,7 @@ class RuleBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets conditions
      *
-     * @param \PensoPay\Client\Model\ConditionBase[]|null $conditions conditions
+     * @param \Pensopay\Client\Model\ConditionBase[]|null $conditions conditions
      *
      * @return self
      */

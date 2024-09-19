@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * SettlementResponse Class Doc Comment
  *
  * @category Class
  * @description Settlement Struct
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -62,10 +62,10 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
         'id' => 'string',
         'currency' => 'string',
         'settled' => 'bool',
-        'period' => '\PensoPay\Client\Model\SettlementPeriod',
-        'summary' => '\PensoPay\Client\Model\SettlementSummary',
-        'fees' => '\PensoPay\Client\Model\SettlementFees',
-        'payout' => '\PensoPay\Client\Model\SettlementPayoutReserve'
+        'period' => '\Pensopay\Client\Model\SettlementPeriod',
+        'summary' => '\Pensopay\Client\Model\SettlementSummary',
+        'fees' => '\Pensopay\Client\Model\SettlementFees',
+        'payout' => '\Pensopay\Client\Model\SettlementPayoutReserve'
     ];
 
     /**
@@ -417,7 +417,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets period
      *
-     * @return \PensoPay\Client\Model\SettlementPeriod|null
+     * @return \Pensopay\Client\Model\SettlementPeriod|null
      */
     public function getPeriod()
     {
@@ -427,7 +427,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets period
      *
-     * @param \PensoPay\Client\Model\SettlementPeriod|null $period period
+     * @param \Pensopay\Client\Model\SettlementPeriod|null $period period
      *
      * @return self
      */
@@ -444,7 +444,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets summary
      *
-     * @return \PensoPay\Client\Model\SettlementSummary|null
+     * @return \Pensopay\Client\Model\SettlementSummary|null
      */
     public function getSummary()
     {
@@ -454,7 +454,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets summary
      *
-     * @param \PensoPay\Client\Model\SettlementSummary|null $summary summary
+     * @param \Pensopay\Client\Model\SettlementSummary|null $summary summary
      *
      * @return self
      */
@@ -471,7 +471,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets fees
      *
-     * @return \PensoPay\Client\Model\SettlementFees|null
+     * @return \Pensopay\Client\Model\SettlementFees|null
      */
     public function getFees()
     {
@@ -481,7 +481,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets fees
      *
-     * @param \PensoPay\Client\Model\SettlementFees|null $fees fees
+     * @param \Pensopay\Client\Model\SettlementFees|null $fees fees
      *
      * @return self
      */
@@ -498,7 +498,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets payout
      *
-     * @return \PensoPay\Client\Model\SettlementPayoutReserve|null
+     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
      */
     public function getPayout()
     {
@@ -508,7 +508,7 @@ class SettlementResponse implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets payout
      *
-     * @param \PensoPay\Client\Model\SettlementPayoutReserve|null $payout payout
+     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $payout payout
      *
      * @return self
      */

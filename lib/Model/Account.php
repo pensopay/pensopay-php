@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * Account Class Doc Comment
  *
  * @category Class
  * @description An account
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -66,6 +66,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'company' => 'string',
         'vat_number' => 'string',
         'url' => 'string',
+        'version' => 'string',
         'email' => 'string',
         'private_key' => 'string'
     ];
@@ -85,6 +86,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'company' => null,
         'vat_number' => null,
         'url' => null,
+        'version' => null,
         'email' => null,
         'private_key' => null
     ];
@@ -102,6 +104,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'company' => false,
         'vat_number' => false,
         'url' => false,
+        'version' => false,
         'email' => false,
         'private_key' => false
     ];
@@ -199,6 +202,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'company' => 'company',
         'vat_number' => 'vat_number',
         'url' => 'url',
+        'version' => 'version',
         'email' => 'email',
         'private_key' => 'private_key'
     ];
@@ -216,6 +220,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'company' => 'setCompany',
         'vat_number' => 'setVatNumber',
         'url' => 'setUrl',
+        'version' => 'setVersion',
         'email' => 'setEmail',
         'private_key' => 'setPrivateKey'
     ];
@@ -233,6 +238,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'company' => 'getCompany',
         'vat_number' => 'getVatNumber',
         'url' => 'getUrl',
+        'version' => 'getVersion',
         'email' => 'getEmail',
         'private_key' => 'getPrivateKey'
     ];
@@ -301,6 +307,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('company', $data ?? [], null);
         $this->setIfExists('vat_number', $data ?? [], null);
         $this->setIfExists('url', $data ?? [], null);
+        $this->setIfExists('version', $data ?? [], null);
         $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('private_key', $data ?? [], null);
     }
@@ -532,6 +539,33 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable url cannot be null');
         }
         $this->container['url'] = $url;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return string|null
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param string|null $version version
+     *
+     * @return self
+     */
+    public function setVersion($version)
+    {
+        if (is_null($version)) {
+            throw new \InvalidArgumentException('non-nullable version cannot be null');
+        }
+        $this->container['version'] = $version;
 
         return $this;
     }

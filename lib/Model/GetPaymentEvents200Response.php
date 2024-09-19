@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * GetPaymentEvents200Response Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class GetPaymentEvents200Response implements ModelInterface, ArrayAccess, \JsonS
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\PensoPay\Client\Model\PaymentEvent[]'
+        'data' => '\Pensopay\Client\Model\PaymentEvent[]'
     ];
 
     /**
@@ -293,7 +293,7 @@ class GetPaymentEvents200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets data
      *
-     * @return \PensoPay\Client\Model\PaymentEvent[]|null
+     * @return \Pensopay\Client\Model\PaymentEvent[]|null
      */
     public function getData()
     {
@@ -303,7 +303,7 @@ class GetPaymentEvents200Response implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets data
      *
-     * @param \PensoPay\Client\Model\PaymentEvent[]|null $data data
+     * @param \Pensopay\Client\Model\PaymentEvent[]|null $data data
      *
      * @return self
      */

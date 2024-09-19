@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Api;
+namespace Pensopay\Client\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -35,16 +35,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use PensoPay\Client\ApiException;
-use PensoPay\Client\Configuration;
-use PensoPay\Client\HeaderSelector;
-use PensoPay\Client\ObjectSerializer;
+use Pensopay\Client\ApiException;
+use Pensopay\Client\Configuration;
+use Pensopay\Client\HeaderSelector;
+use Pensopay\Client\ObjectSerializer;
 
 /**
  * SettlementApi Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -137,9 +137,9 @@ class SettlementApi
      * @param  string $settlement_id Settlement ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlement'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\SettlementResponse
+     * @return \Pensopay\Client\Model\SettlementResponse
      */
     public function getSettlement($settlement_id, string $contentType = self::contentTypes['getSettlement'][0])
     {
@@ -155,9 +155,9 @@ class SettlementApi
      * @param  string $settlement_id Settlement ID (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlement'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\SettlementResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\SettlementResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSettlementWithHttpInfo($settlement_id, string $contentType = self::contentTypes['getSettlement'][0])
     {
@@ -200,11 +200,11 @@ class SettlementApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\SettlementResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\SettlementResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\SettlementResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\SettlementResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -222,13 +222,13 @@ class SettlementApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\SettlementResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\SettlementResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\SettlementResponse';
+            $returnType = '\Pensopay\Client\Model\SettlementResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -261,7 +261,7 @@ class SettlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\SettlementResponse',
+                        '\Pensopay\Client\Model\SettlementResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,7 +305,7 @@ class SettlementApi
      */
     public function getSettlementAsyncWithHttpInfo($settlement_id, string $contentType = self::contentTypes['getSettlement'][0])
     {
-        $returnType = '\PensoPay\Client\Model\SettlementResponse';
+        $returnType = '\Pensopay\Client\Model\SettlementResponse';
         $request = $this->getSettlementRequest($settlement_id, $contentType);
 
         return $this->client
@@ -445,19 +445,19 @@ class SettlementApi
      *
      * Get settlements
      *
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $settled  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $date_from  (optional)
-     * @param  string $date_to  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  bool $settled Filter by settled status, true or false. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $date_from Find settlements with payout date after or during date_from. Takes an ISO-8601 date string. (optional)
+     * @param  string $date_to Find settlements with payout date before or during date_to. Takes an ISO-8601 date string. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlements'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\SettlementsResponse
+     * @return \Pensopay\Client\Model\SettlementsResponse
      */
-    public function getSettlements($per_page = null, $page = null, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
+    public function getSettlements($per_page = 10, $page = 1, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
     {
         list($response) = $this->getSettlementsWithHttpInfo($per_page, $page, $settled, $currency, $date_from, $date_to, $contentType);
         return $response;
@@ -468,19 +468,19 @@ class SettlementApi
      *
      * Get settlements
      *
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $settled  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $date_from  (optional)
-     * @param  string $date_to  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  bool $settled Filter by settled status, true or false. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $date_from Find settlements with payout date after or during date_from. Takes an ISO-8601 date string. (optional)
+     * @param  string $date_to Find settlements with payout date before or during date_to. Takes an ISO-8601 date string. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlements'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\SettlementsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\SettlementsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSettlementsWithHttpInfo($per_page = null, $page = null, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
+    public function getSettlementsWithHttpInfo($per_page = 10, $page = 1, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
     {
         $request = $this->getSettlementsRequest($per_page, $page, $settled, $currency, $date_from, $date_to, $contentType);
 
@@ -521,11 +521,11 @@ class SettlementApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\SettlementsResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\SettlementsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\SettlementsResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\SettlementsResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -543,13 +543,13 @@ class SettlementApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\SettlementsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\SettlementsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\SettlementsResponse';
+            $returnType = '\Pensopay\Client\Model\SettlementsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -582,7 +582,7 @@ class SettlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\SettlementsResponse',
+                        '\Pensopay\Client\Model\SettlementsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -597,18 +597,18 @@ class SettlementApi
      *
      * Get settlements
      *
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $settled  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $date_from  (optional)
-     * @param  string $date_to  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  bool $settled Filter by settled status, true or false. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $date_from Find settlements with payout date after or during date_from. Takes an ISO-8601 date string. (optional)
+     * @param  string $date_to Find settlements with payout date before or during date_to. Takes an ISO-8601 date string. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSettlementsAsync($per_page = null, $page = null, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
+    public function getSettlementsAsync($per_page = 10, $page = 1, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
     {
         return $this->getSettlementsAsyncWithHttpInfo($per_page, $page, $settled, $currency, $date_from, $date_to, $contentType)
             ->then(
@@ -623,20 +623,20 @@ class SettlementApi
      *
      * Get settlements
      *
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $settled  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $date_from  (optional)
-     * @param  string $date_to  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  bool $settled Filter by settled status, true or false. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $date_from Find settlements with payout date after or during date_from. Takes an ISO-8601 date string. (optional)
+     * @param  string $date_to Find settlements with payout date before or during date_to. Takes an ISO-8601 date string. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSettlementsAsyncWithHttpInfo($per_page = null, $page = null, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
+    public function getSettlementsAsyncWithHttpInfo($per_page = 10, $page = 1, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
     {
-        $returnType = '\PensoPay\Client\Model\SettlementsResponse';
+        $returnType = '\Pensopay\Client\Model\SettlementsResponse';
         $request = $this->getSettlementsRequest($per_page, $page, $settled, $currency, $date_from, $date_to, $contentType);
 
         return $this->client
@@ -678,18 +678,18 @@ class SettlementApi
     /**
      * Create request for operation 'getSettlements'
      *
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $settled  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $date_from  (optional)
-     * @param  string $date_to  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  bool $settled Filter by settled status, true or false. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $date_from Find settlements with payout date after or during date_from. Takes an ISO-8601 date string. (optional)
+     * @param  string $date_to Find settlements with payout date before or during date_to. Takes an ISO-8601 date string. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getSettlements'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSettlementsRequest($per_page = null, $page = null, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
+    public function getSettlementsRequest($per_page = 10, $page = 1, $settled = null, $currency = null, $date_from = null, $date_to = null, string $contentType = self::contentTypes['getSettlements'][0])
     {
 
 
@@ -827,18 +827,18 @@ class SettlementApi
      * Get Settlement Transactions
      *
      * @param  string $settlement_id Settlement ID (required)
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $is  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $status  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  string $is Filter by transaction type. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $status The status of the transaction (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionsBySettlement'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \PensoPay\Client\Model\TransactionsResponse
+     * @return \Pensopay\Client\Model\TransactionsResponse
      */
-    public function getTransactionsBySettlement($settlement_id, $per_page = null, $page = null, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
+    public function getTransactionsBySettlement($settlement_id, $per_page = 10, $page = 1, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
     {
         list($response) = $this->getTransactionsBySettlementWithHttpInfo($settlement_id, $per_page, $page, $is, $currency, $status, $contentType);
         return $response;
@@ -850,18 +850,18 @@ class SettlementApi
      * Get Settlement Transactions
      *
      * @param  string $settlement_id Settlement ID (required)
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $is  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $status  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  string $is Filter by transaction type. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $status The status of the transaction (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionsBySettlement'] to see the possible values for this operation
      *
-     * @throws \PensoPay\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \PensoPay\Client\Model\TransactionsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\TransactionsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionsBySettlementWithHttpInfo($settlement_id, $per_page = null, $page = null, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
+    public function getTransactionsBySettlementWithHttpInfo($settlement_id, $per_page = 10, $page = 1, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
     {
         $request = $this->getTransactionsBySettlementRequest($settlement_id, $per_page, $page, $is, $currency, $status, $contentType);
 
@@ -902,11 +902,11 @@ class SettlementApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\PensoPay\Client\Model\TransactionsResponse' === '\SplFileObject') {
+                    if ('\Pensopay\Client\Model\TransactionsResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\PensoPay\Client\Model\TransactionsResponse' !== 'string') {
+                        if ('\Pensopay\Client\Model\TransactionsResponse' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -924,13 +924,13 @@ class SettlementApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\PensoPay\Client\Model\TransactionsResponse', []),
+                        ObjectSerializer::deserialize($content, '\Pensopay\Client\Model\TransactionsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\PensoPay\Client\Model\TransactionsResponse';
+            $returnType = '\Pensopay\Client\Model\TransactionsResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -963,7 +963,7 @@ class SettlementApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\PensoPay\Client\Model\TransactionsResponse',
+                        '\Pensopay\Client\Model\TransactionsResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -979,17 +979,17 @@ class SettlementApi
      * Get Settlement Transactions
      *
      * @param  string $settlement_id Settlement ID (required)
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $is  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $status  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  string $is Filter by transaction type. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $status The status of the transaction (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionsBySettlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsBySettlementAsync($settlement_id, $per_page = null, $page = null, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
+    public function getTransactionsBySettlementAsync($settlement_id, $per_page = 10, $page = 1, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
     {
         return $this->getTransactionsBySettlementAsyncWithHttpInfo($settlement_id, $per_page, $page, $is, $currency, $status, $contentType)
             ->then(
@@ -1005,19 +1005,19 @@ class SettlementApi
      * Get Settlement Transactions
      *
      * @param  string $settlement_id Settlement ID (required)
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $is  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $status  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  string $is Filter by transaction type. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $status The status of the transaction (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionsBySettlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsBySettlementAsyncWithHttpInfo($settlement_id, $per_page = null, $page = null, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
+    public function getTransactionsBySettlementAsyncWithHttpInfo($settlement_id, $per_page = 10, $page = 1, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
     {
-        $returnType = '\PensoPay\Client\Model\TransactionsResponse';
+        $returnType = '\Pensopay\Client\Model\TransactionsResponse';
         $request = $this->getTransactionsBySettlementRequest($settlement_id, $per_page, $page, $is, $currency, $status, $contentType);
 
         return $this->client
@@ -1060,17 +1060,17 @@ class SettlementApi
      * Create request for operation 'getTransactionsBySettlement'
      *
      * @param  string $settlement_id Settlement ID (required)
-     * @param  int $per_page  (optional)
-     * @param  int $page  (optional)
-     * @param  string $is  (optional)
-     * @param  string $currency  (optional)
-     * @param  string $status  (optional)
+     * @param  int $per_page How many results to list per page between 1 and 100. (optional, default to 10)
+     * @param  int $page What page to view (optional, default to 1)
+     * @param  string $is Filter by transaction type. (optional)
+     * @param  string $currency Currency Code (ISO-4217). (optional)
+     * @param  string $status The status of the transaction (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getTransactionsBySettlement'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getTransactionsBySettlementRequest($settlement_id, $per_page = null, $page = null, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
+    public function getTransactionsBySettlementRequest($settlement_id, $per_page = 10, $page = 1, $is = null, $currency = null, $status = null, string $contentType = self::contentTypes['getTransactionsBySettlement'][0])
     {
 
         // verify the required parameter 'settlement_id' is set

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,16 +27,16 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * PaymentPaymentResponse Class Doc Comment
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -71,7 +71,7 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'link' => 'string',
         'link_uuid' => 'string',
         'methods' => 'string[]',
-        'order' => '\PensoPay\Client\Model\PaymentPaymentOrder',
+        'order' => '\Pensopay\Client\Model\PaymentPaymentOrder',
         'order_id' => 'string',
         'reference' => 'string',
         'refunded' => 'int',
@@ -79,7 +79,8 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'success_url' => 'string',
         'testmode' => 'bool',
         'updated_at' => 'string',
-        'variables' => 'array<string,string>'
+        'variables' => 'array<string,string>',
+        'payment_details' => 'array<string,string>'
     ];
 
     /**
@@ -111,7 +112,8 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'success_url' => null,
         'testmode' => null,
         'updated_at' => null,
-        'variables' => null
+        'variables' => null,
+        'payment_details' => null
     ];
 
     /**
@@ -141,7 +143,8 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'success_url' => false,
         'testmode' => false,
         'updated_at' => false,
-        'variables' => false
+        'variables' => false,
+        'payment_details' => false
     ];
 
     /**
@@ -251,7 +254,8 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'success_url' => 'success_url',
         'testmode' => 'testmode',
         'updated_at' => 'updated_at',
-        'variables' => 'variables'
+        'variables' => 'variables',
+        'payment_details' => 'payment_details'
     ];
 
     /**
@@ -281,7 +285,8 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'success_url' => 'setSuccessUrl',
         'testmode' => 'setTestmode',
         'updated_at' => 'setUpdatedAt',
-        'variables' => 'setVariables'
+        'variables' => 'setVariables',
+        'payment_details' => 'setPaymentDetails'
     ];
 
     /**
@@ -311,7 +316,8 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         'success_url' => 'getSuccessUrl',
         'testmode' => 'getTestmode',
         'updated_at' => 'getUpdatedAt',
-        'variables' => 'getVariables'
+        'variables' => 'getVariables',
+        'payment_details' => 'getPaymentDetails'
     ];
 
     /**
@@ -393,6 +399,7 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         $this->setIfExists('testmode', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
         $this->setIfExists('variables', $data ?? [], null);
+        $this->setIfExists('payment_details', $data ?? [], null);
     }
 
     /**
@@ -487,6 +494,9 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
         }
         if ($this->container['variables'] === null) {
             $invalidProperties[] = "'variables' can't be null";
+        }
+        if ($this->container['payment_details'] === null) {
+            $invalidProperties[] = "'payment_details' can't be null";
         }
         return $invalidProperties;
     }
@@ -857,7 +867,7 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets order
      *
-     * @return \PensoPay\Client\Model\PaymentPaymentOrder
+     * @return \Pensopay\Client\Model\PaymentPaymentOrder
      */
     public function getOrder()
     {
@@ -867,7 +877,7 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets order
      *
-     * @param \PensoPay\Client\Model\PaymentPaymentOrder $order order
+     * @param \Pensopay\Client\Model\PaymentPaymentOrder $order order
      *
      * @return self
      */
@@ -1093,6 +1103,33 @@ class PaymentPaymentResponse implements ModelInterface, ArrayAccess, \JsonSerial
             throw new \InvalidArgumentException('non-nullable variables cannot be null');
         }
         $this->container['variables'] = $variables;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_details
+     *
+     * @return array<string,string>
+     */
+    public function getPaymentDetails()
+    {
+        return $this->container['payment_details'];
+    }
+
+    /**
+     * Sets payment_details
+     *
+     * @param array<string,string> $payment_details payment_details
+     *
+     * @return self
+     */
+    public function setPaymentDetails($payment_details)
+    {
+        if (is_null($payment_details)) {
+            throw new \InvalidArgumentException('non-nullable payment_details cannot be null');
+        }
+        $this->container['payment_details'] = $payment_details;
 
         return $this;
     }

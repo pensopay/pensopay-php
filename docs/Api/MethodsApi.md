@@ -1,4 +1,4 @@
-# PensoPay\Client\MethodsApi
+# Pensopay\Client\MethodsApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `getMethods()`
 
 ```php
-getMethods(): \PensoPay\Client\Model\Methods
+getMethods(): \Pensopay\Client\Model\Methods
 ```
 
 Get methods for account
@@ -25,10 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\MethodsApi(
+$apiInstance = new Pensopay\Client\Api\MethodsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\PensoPay\Client\Model\Methods**](../Model/Methods.md)
+[**\Pensopay\Client\Model\Methods**](../Model/Methods.md)
 
 ### Authorization
 
@@ -80,10 +80,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\MethodsApi(
+$apiInstance = new Pensopay\Client\Api\MethodsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -137,10 +137,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\MethodsApi(
+$apiInstance = new Pensopay\Client\Api\MethodsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

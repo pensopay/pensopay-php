@@ -1,4 +1,4 @@
-# PensoPay\Client\SettlementApi
+# Pensopay\Client\SettlementApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
@@ -12,7 +12,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 ## `getSettlement()`
 
 ```php
-getSettlement($settlement_id): \PensoPay\Client\Model\SettlementResponse
+getSettlement($settlement_id): \Pensopay\Client\Model\SettlementResponse
 ```
 
 Get Settlement
@@ -25,10 +25,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SettlementApi(
+$apiInstance = new Pensopay\Client\Api\SettlementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -52,7 +52,7 @@ try {
 
 ### Return type
 
-[**\PensoPay\Client\Model\SettlementResponse**](../Model/SettlementResponse.md)
+[**\Pensopay\Client\Model\SettlementResponse**](../Model/SettlementResponse.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ try {
 ## `getSettlements()`
 
 ```php
-getSettlements($per_page, $page, $settled, $currency, $date_from, $date_to): \PensoPay\Client\Model\SettlementsResponse
+getSettlements($per_page, $page, $settled, $currency, $date_from, $date_to): \Pensopay\Client\Model\SettlementsResponse
 ```
 
 Get settlements
@@ -83,21 +83,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SettlementApi(
+$apiInstance = new Pensopay\Client\Api\SettlementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$per_page = 56; // int | 
-$page = 56; // int | 
-$settled = 'settled_example'; // string | 
-$currency = 'currency_example'; // string | 
-$date_from = 'date_from_example'; // string | 
-$date_to = 'date_to_example'; // string | 
+$per_page = 10; // int | How many results to list per page between 1 and 100.
+$page = 1; // int | What page to view
+$settled = 'settled_example'; // bool | Filter by settled status, true or false.
+$currency = DKK; // string | Currency Code (ISO-4217).
+$date_from = 2024-08-20; // string | Find settlements with payout date after or during date_from. Takes an ISO-8601 date string.
+$date_to = 2024-08-30; // string | Find settlements with payout date before or during date_to. Takes an ISO-8601 date string.
 
 try {
     $result = $apiInstance->getSettlements($per_page, $page, $settled, $currency, $date_from, $date_to);
@@ -111,16 +111,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **per_page** | **int**|  | [optional] |
-| **page** | **int**|  | [optional] |
-| **settled** | **string**|  | [optional] |
-| **currency** | **string**|  | [optional] |
-| **date_from** | **string**|  | [optional] |
-| **date_to** | **string**|  | [optional] |
+| **per_page** | **int**| How many results to list per page between 1 and 100. | [optional] [default to 10] |
+| **page** | **int**| What page to view | [optional] [default to 1] |
+| **settled** | **bool**| Filter by settled status, true or false. | [optional] |
+| **currency** | **string**| Currency Code (ISO-4217). | [optional] |
+| **date_from** | **string**| Find settlements with payout date after or during date_from. Takes an ISO-8601 date string. | [optional] |
+| **date_to** | **string**| Find settlements with payout date before or during date_to. Takes an ISO-8601 date string. | [optional] |
 
 ### Return type
 
-[**\PensoPay\Client\Model\SettlementsResponse**](../Model/SettlementsResponse.md)
+[**\Pensopay\Client\Model\SettlementsResponse**](../Model/SettlementsResponse.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ try {
 ## `getTransactionsBySettlement()`
 
 ```php
-getTransactionsBySettlement($settlement_id, $per_page, $page, $is, $currency, $status): \PensoPay\Client\Model\TransactionsResponse
+getTransactionsBySettlement($settlement_id, $per_page, $page, $is, $currency, $status): \Pensopay\Client\Model\TransactionsResponse
 ```
 
 Get Settlement Transactions
@@ -151,21 +151,21 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: default
-$config = PensoPay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new PensoPay\Client\Api\SettlementApi(
+$apiInstance = new Pensopay\Client\Api\SettlementApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 $settlement_id = 'settlement_id_example'; // string | Settlement ID
-$per_page = 56; // int | 
-$page = 56; // int | 
-$is = 'is_example'; // string | 
-$currency = 'currency_example'; // string | 
-$status = 'status_example'; // string | 
+$per_page = 10; // int | How many results to list per page between 1 and 100.
+$page = 1; // int | What page to view
+$is = 'is_example'; // string | Filter by transaction type.
+$currency = DKK; // string | Currency Code (ISO-4217).
+$status = 'status_example'; // string | The status of the transaction
 
 try {
     $result = $apiInstance->getTransactionsBySettlement($settlement_id, $per_page, $page, $is, $currency, $status);
@@ -180,15 +180,15 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **settlement_id** | **string**| Settlement ID | |
-| **per_page** | **int**|  | [optional] |
-| **page** | **int**|  | [optional] |
-| **is** | **string**|  | [optional] |
-| **currency** | **string**|  | [optional] |
-| **status** | **string**|  | [optional] |
+| **per_page** | **int**| How many results to list per page between 1 and 100. | [optional] [default to 10] |
+| **page** | **int**| What page to view | [optional] [default to 1] |
+| **is** | **string**| Filter by transaction type. | [optional] |
+| **currency** | **string**| Currency Code (ISO-4217). | [optional] |
+| **status** | **string**| The status of the transaction | [optional] |
 
 ### Return type
 
-[**\PensoPay\Client\Model\TransactionsResponse**](../Model/TransactionsResponse.md)
+[**\Pensopay\Client\Model\TransactionsResponse**](../Model/TransactionsResponse.md)
 
 ### Authorization
 

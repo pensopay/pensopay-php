@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -27,17 +27,17 @@
  * Do not edit the class manually.
  */
 
-namespace PensoPay\Client\Model;
+namespace Pensopay\Client\Model;
 
 use \ArrayAccess;
-use \PensoPay\Client\ObjectSerializer;
+use \Pensopay\Client\ObjectSerializer;
 
 /**
  * SettlementsResponse Class Doc Comment
  *
  * @category Class
  * @description 
- * @package  PensoPay\Client
+ * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -59,8 +59,8 @@ class SettlementsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\PensoPay\Client\Model\SettlementResponse[]',
-        'meta' => '\PensoPay\Client\Model\ResponseMeta'
+        'data' => '\Pensopay\Client\Model\SettlementResponse[]',
+        'meta' => '\Pensopay\Client\Model\ResponseMeta'
     ];
 
     /**
@@ -301,7 +301,7 @@ class SettlementsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets data
      *
-     * @return \PensoPay\Client\Model\SettlementResponse[]|null
+     * @return \Pensopay\Client\Model\SettlementResponse[]|null
      */
     public function getData()
     {
@@ -311,7 +311,7 @@ class SettlementsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets data
      *
-     * @param \PensoPay\Client\Model\SettlementResponse[]|null $data 
+     * @param \Pensopay\Client\Model\SettlementResponse[]|null $data 
      *
      * @return self
      */
@@ -328,7 +328,7 @@ class SettlementsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets meta
      *
-     * @return \PensoPay\Client\Model\ResponseMeta|null
+     * @return \Pensopay\Client\Model\ResponseMeta|null
      */
     public function getMeta()
     {
@@ -338,7 +338,7 @@ class SettlementsResponse implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets meta
      *
-     * @param \PensoPay\Client\Model\ResponseMeta|null $meta meta
+     * @param \Pensopay\Client\Model\ResponseMeta|null $meta meta
      *
      * @return self
      */

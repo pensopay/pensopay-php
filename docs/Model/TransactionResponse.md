@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **region** | **string** |  | [optional]
 **payment_method** | **string** |  | [optional]
 **status** | **object** |  | [optional]
-**settlement** | [**\PensoPay\Client\Model\TransactionSettlement**](TransactionSettlement.md) |  | [optional]
+**settlement** | [**\Pensopay\Client\Model\TransactionResponseSettlement**](TransactionResponseSettlement.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
