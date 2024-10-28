@@ -8,8 +8,7 @@ For more information, please visit [https://help.pensopay.com/hc/da](https://hel
 
 ### Requirements
 
-PHP 7.4 and later.
-Should also work with PHP 8.0.
+PHP >= 8.1
 
 ### Composer
 
@@ -20,25 +19,16 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
+      "url": "https://github.com/pensopay/pensopay-php.git"
     }
   ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "pensopay/pensopay-php": "*@dev"
   }
 }
 ```
 
 Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
-
-```php
-<?php
-require_once('/path/to/OpenAPIClient-php/vendor/autoload.php');
-```
 
 ## Getting Started
 
@@ -188,10 +178,6 @@ To run the tests, use:
 composer install
 vendor/bin/phpunit
 ```
-
-## Author
-
-support@pensopay.com
 
 ## About this package
 
