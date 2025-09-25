@@ -1,6 +1,6 @@
 <?php
 /**
- * Settlement
+ * ErrorMessage1
  *
  * PHP version 8.1
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Pensopay\Client\ObjectSerializer;
 
 /**
- * Settlement Class Doc Comment
+ * ErrorMessage1 Class Doc Comment
  *
  * @category Class
- * @description Settlement Struct
+ * @description An error message
  * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
+class ErrorMessage1 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Settlement';
+    protected static $openAPIModelName = 'errorMessage1';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +59,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'settled' => 'bool',
-        'currency' => 'string',
-        'period' => '\Pensopay\Client\Model\SettlementPeriod',
-        'payout' => '\Pensopay\Client\Model\SettlementPayoutReserve',
-        'summary' => '\Pensopay\Client\Model\SettlementSummary',
-        'reserve' => '\Pensopay\Client\Model\SettlementPayoutReserve',
-        'fees' => '\Pensopay\Client\Model\SettlementFees',
-        'otherPostings' => '\Pensopay\Client\Model\SettlementPosting[]'
+        'message' => 'string'
     ];
 
     /**
@@ -78,15 +70,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'settled' => null,
-        'currency' => null,
-        'period' => null,
-        'payout' => null,
-        'summary' => null,
-        'reserve' => null,
-        'fees' => null,
-        'otherPostings' => null
+        'message' => null
     ];
 
     /**
@@ -95,15 +79,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'settled' => false,
-        'currency' => false,
-        'period' => false,
-        'payout' => false,
-        'summary' => false,
-        'reserve' => false,
-        'fees' => false,
-        'otherPostings' => false
+        'message' => false
     ];
 
     /**
@@ -192,15 +168,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'settled' => 'settled',
-        'currency' => 'currency',
-        'period' => 'period',
-        'payout' => 'payout',
-        'summary' => 'summary',
-        'reserve' => 'reserve',
-        'fees' => 'fees',
-        'otherPostings' => 'other_postings'
+        'message' => 'message'
     ];
 
     /**
@@ -209,15 +177,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'settled' => 'setSettled',
-        'currency' => 'setCurrency',
-        'period' => 'setPeriod',
-        'payout' => 'setPayout',
-        'summary' => 'setSummary',
-        'reserve' => 'setReserve',
-        'fees' => 'setFees',
-        'otherPostings' => 'setOtherPostings'
+        'message' => 'setMessage'
     ];
 
     /**
@@ -226,15 +186,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'settled' => 'getSettled',
-        'currency' => 'getCurrency',
-        'period' => 'getPeriod',
-        'payout' => 'getPayout',
-        'summary' => 'getSummary',
-        'reserve' => 'getReserve',
-        'fees' => 'getFees',
-        'otherPostings' => 'getOtherPostings'
+        'message' => 'getMessage'
     ];
 
     /**
@@ -294,15 +246,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('settled', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('period', $data ?? [], null);
-        $this->setIfExists('payout', $data ?? [], null);
-        $this->setIfExists('summary', $data ?? [], null);
-        $this->setIfExists('reserve', $data ?? [], null);
-        $this->setIfExists('fees', $data ?? [], null);
-        $this->setIfExists('otherPostings', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
     }
 
     /**
@@ -348,244 +292,28 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets message
      *
      * @return string|null
      */
-    public function getId()
+    public function getMessage()
     {
-        return $this->container['id'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets id
+     * Sets message
      *
-     * @param string|null $id 
+     * @param string|null $message message
      *
      * @return self
      */
-    public function setId($id)
+    public function setMessage($message)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets settled
-     *
-     * @return bool|null
-     */
-    public function getSettled()
-    {
-        return $this->container['settled'];
-    }
-
-    /**
-     * Sets settled
-     *
-     * @param bool|null $settled 
-     *
-     * @return self
-     */
-    public function setSettled($settled)
-    {
-        if (is_null($settled)) {
-            throw new \InvalidArgumentException('non-nullable settled cannot be null');
-        }
-        $this->container['settled'] = $settled;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
-     *
-     * @return string|null
-     */
-    public function getCurrency()
-    {
-        return $this->container['currency'];
-    }
-
-    /**
-     * Sets currency
-     *
-     * @param string|null $currency 
-     *
-     * @return self
-     */
-    public function setCurrency($currency)
-    {
-        if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
-        }
-        $this->container['currency'] = $currency;
-
-        return $this;
-    }
-
-    /**
-     * Gets period
-     *
-     * @return \Pensopay\Client\Model\SettlementPeriod|null
-     */
-    public function getPeriod()
-    {
-        return $this->container['period'];
-    }
-
-    /**
-     * Sets period
-     *
-     * @param \Pensopay\Client\Model\SettlementPeriod|null $period period
-     *
-     * @return self
-     */
-    public function setPeriod($period)
-    {
-        if (is_null($period)) {
-            throw new \InvalidArgumentException('non-nullable period cannot be null');
-        }
-        $this->container['period'] = $period;
-
-        return $this;
-    }
-
-    /**
-     * Gets payout
-     *
-     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
-     */
-    public function getPayout()
-    {
-        return $this->container['payout'];
-    }
-
-    /**
-     * Sets payout
-     *
-     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $payout payout
-     *
-     * @return self
-     */
-    public function setPayout($payout)
-    {
-        if (is_null($payout)) {
-            throw new \InvalidArgumentException('non-nullable payout cannot be null');
-        }
-        $this->container['payout'] = $payout;
-
-        return $this;
-    }
-
-    /**
-     * Gets summary
-     *
-     * @return \Pensopay\Client\Model\SettlementSummary|null
-     */
-    public function getSummary()
-    {
-        return $this->container['summary'];
-    }
-
-    /**
-     * Sets summary
-     *
-     * @param \Pensopay\Client\Model\SettlementSummary|null $summary summary
-     *
-     * @return self
-     */
-    public function setSummary($summary)
-    {
-        if (is_null($summary)) {
-            throw new \InvalidArgumentException('non-nullable summary cannot be null');
-        }
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets reserve
-     *
-     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
-     */
-    public function getReserve()
-    {
-        return $this->container['reserve'];
-    }
-
-    /**
-     * Sets reserve
-     *
-     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $reserve reserve
-     *
-     * @return self
-     */
-    public function setReserve($reserve)
-    {
-        if (is_null($reserve)) {
-            throw new \InvalidArgumentException('non-nullable reserve cannot be null');
-        }
-        $this->container['reserve'] = $reserve;
-
-        return $this;
-    }
-
-    /**
-     * Gets fees
-     *
-     * @return \Pensopay\Client\Model\SettlementFees|null
-     */
-    public function getFees()
-    {
-        return $this->container['fees'];
-    }
-
-    /**
-     * Sets fees
-     *
-     * @param \Pensopay\Client\Model\SettlementFees|null $fees fees
-     *
-     * @return self
-     */
-    public function setFees($fees)
-    {
-        if (is_null($fees)) {
-            throw new \InvalidArgumentException('non-nullable fees cannot be null');
-        }
-        $this->container['fees'] = $fees;
-
-        return $this;
-    }
-
-    /**
-     * Gets otherPostings
-     *
-     * @return \Pensopay\Client\Model\SettlementPosting[]|null
-     */
-    public function getOtherPostings()
-    {
-        return $this->container['otherPostings'];
-    }
-
-    /**
-     * Sets otherPostings
-     *
-     * @param \Pensopay\Client\Model\SettlementPosting[]|null $otherPostings 
-     *
-     * @return self
-     */
-    public function setOtherPostings($otherPostings)
-    {
-        if (is_null($otherPostings)) {
-            throw new \InvalidArgumentException('non-nullable otherPostings cannot be null');
-        }
-        $this->container['otherPostings'] = $otherPostings;
+        $this->container['message'] = $message;
 
         return $this;
     }

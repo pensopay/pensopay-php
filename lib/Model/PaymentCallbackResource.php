@@ -1,6 +1,6 @@
 <?php
 /**
- * Settlement
+ * PaymentCallbackResource
  *
  * PHP version 8.1
  *
@@ -33,16 +33,15 @@ use \ArrayAccess;
 use \Pensopay\Client\ObjectSerializer;
 
 /**
- * Settlement Class Doc Comment
+ * PaymentCallbackResource Class Doc Comment
  *
  * @category Class
- * @description Settlement Struct
  * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
+class PaymentCallbackResource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Settlement';
+    protected static $openAPIModelName = 'payment.CallbackResource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +58,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'settled' => 'bool',
-        'currency' => 'string',
-        'period' => '\Pensopay\Client\Model\SettlementPeriod',
-        'payout' => '\Pensopay\Client\Model\SettlementPayoutReserve',
-        'summary' => '\Pensopay\Client\Model\SettlementSummary',
-        'reserve' => '\Pensopay\Client\Model\SettlementPayoutReserve',
-        'fees' => '\Pensopay\Client\Model\SettlementFees',
-        'otherPostings' => '\Pensopay\Client\Model\SettlementPosting[]'
+        'type' => 'string',
+        'event' => 'string',
+        'message' => 'string',
+        'createdAt' => 'string',
+        'resourceId' => 'int',
+        'resource' => '\Pensopay\Client\Model\PaymentPaymentResponse'
     ];
 
     /**
@@ -78,15 +74,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'settled' => null,
-        'currency' => null,
-        'period' => null,
-        'payout' => null,
-        'summary' => null,
-        'reserve' => null,
-        'fees' => null,
-        'otherPostings' => null
+        'type' => null,
+        'event' => null,
+        'message' => null,
+        'createdAt' => null,
+        'resourceId' => 'int64',
+        'resource' => null
     ];
 
     /**
@@ -95,15 +88,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'settled' => false,
-        'currency' => false,
-        'period' => false,
-        'payout' => false,
-        'summary' => false,
-        'reserve' => false,
-        'fees' => false,
-        'otherPostings' => false
+        'type' => false,
+        'event' => false,
+        'message' => false,
+        'createdAt' => false,
+        'resourceId' => false,
+        'resource' => false
     ];
 
     /**
@@ -192,15 +182,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'settled' => 'settled',
-        'currency' => 'currency',
-        'period' => 'period',
-        'payout' => 'payout',
-        'summary' => 'summary',
-        'reserve' => 'reserve',
-        'fees' => 'fees',
-        'otherPostings' => 'other_postings'
+        'type' => 'type',
+        'event' => 'event',
+        'message' => 'message',
+        'createdAt' => 'created_at',
+        'resourceId' => 'resource_id',
+        'resource' => 'resource'
     ];
 
     /**
@@ -209,15 +196,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'settled' => 'setSettled',
-        'currency' => 'setCurrency',
-        'period' => 'setPeriod',
-        'payout' => 'setPayout',
-        'summary' => 'setSummary',
-        'reserve' => 'setReserve',
-        'fees' => 'setFees',
-        'otherPostings' => 'setOtherPostings'
+        'type' => 'setType',
+        'event' => 'setEvent',
+        'message' => 'setMessage',
+        'createdAt' => 'setCreatedAt',
+        'resourceId' => 'setResourceId',
+        'resource' => 'setResource'
     ];
 
     /**
@@ -226,15 +210,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'settled' => 'getSettled',
-        'currency' => 'getCurrency',
-        'period' => 'getPeriod',
-        'payout' => 'getPayout',
-        'summary' => 'getSummary',
-        'reserve' => 'getReserve',
-        'fees' => 'getFees',
-        'otherPostings' => 'getOtherPostings'
+        'type' => 'getType',
+        'event' => 'getEvent',
+        'message' => 'getMessage',
+        'createdAt' => 'getCreatedAt',
+        'resourceId' => 'getResourceId',
+        'resource' => 'getResource'
     ];
 
     /**
@@ -278,6 +259,40 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const TYPE_PAYMENT = 'payment';
+    public const TYPE_RECURRING = 'recurring';
+    public const TYPE_MANDATE = 'mandate';
+    public const EVENT_PAYMENT_AUTHORIZED = 'payment.authorized';
+    public const EVENT_PAYMENT_CAPTURE_FAILED = 'payment.capture_failed';
+    public const EVENT_PAYMENT_CAPTURE = 'payment.capture';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_PAYMENT,
+            self::TYPE_RECURRING,
+            self::TYPE_MANDATE,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getEventAllowableValues()
+    {
+        return [
+            self::EVENT_PAYMENT_AUTHORIZED,
+            self::EVENT_PAYMENT_CAPTURE_FAILED,
+            self::EVENT_PAYMENT_CAPTURE,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -294,15 +309,12 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('settled', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('period', $data ?? [], null);
-        $this->setIfExists('payout', $data ?? [], null);
-        $this->setIfExists('summary', $data ?? [], null);
-        $this->setIfExists('reserve', $data ?? [], null);
-        $this->setIfExists('fees', $data ?? [], null);
-        $this->setIfExists('otherPostings', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('event', $data ?? [], null);
+        $this->setIfExists('message', $data ?? [], null);
+        $this->setIfExists('createdAt', $data ?? [], null);
+        $this->setIfExists('resourceId', $data ?? [], null);
+        $this->setIfExists('resource', $data ?? [], null);
     }
 
     /**
@@ -332,6 +344,42 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'type', must be one of '%s'",
+                $this->container['type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['event'] === null) {
+            $invalidProperties[] = "'event' can't be null";
+        }
+        $allowedValues = $this->getEventAllowableValues();
+        if (!is_null($this->container['event']) && !in_array($this->container['event'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'event', must be one of '%s'",
+                $this->container['event'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
+        }
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
+        }
+        if ($this->container['resourceId'] === null) {
+            $invalidProperties[] = "'resourceId' can't be null";
+        }
+        if ($this->container['resource'] === null) {
+            $invalidProperties[] = "'resource' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -348,244 +396,183 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets type
      *
-     * @return string|null
+     * @return string
      */
-    public function getId()
+    public function getType()
     {
-        return $this->container['id'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets id
+     * Sets type
      *
-     * @param string|null $id 
+     * @param string $type type
      *
      * @return self
      */
-    public function setId($id)
+    public function setType($type)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['id'] = $id;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'type', must be one of '%s'",
+                    $type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets settled
+     * Gets event
      *
-     * @return bool|null
+     * @return string
      */
-    public function getSettled()
+    public function getEvent()
     {
-        return $this->container['settled'];
+        return $this->container['event'];
     }
 
     /**
-     * Sets settled
+     * Sets event
      *
-     * @param bool|null $settled 
+     * @param string $event event
      *
      * @return self
      */
-    public function setSettled($settled)
+    public function setEvent($event)
     {
-        if (is_null($settled)) {
-            throw new \InvalidArgumentException('non-nullable settled cannot be null');
+        if (is_null($event)) {
+            throw new \InvalidArgumentException('non-nullable event cannot be null');
         }
-        $this->container['settled'] = $settled;
+        $allowedValues = $this->getEventAllowableValues();
+        if (!in_array($event, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'event', must be one of '%s'",
+                    $event,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['event'] = $event;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets message
      *
-     * @return string|null
+     * @return string
      */
-    public function getCurrency()
+    public function getMessage()
     {
-        return $this->container['currency'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets currency
+     * Sets message
      *
-     * @param string|null $currency 
+     * @param string $message message
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setMessage($message)
     {
-        if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        if (is_null($message)) {
+            throw new \InvalidArgumentException('non-nullable message cannot be null');
         }
-        $this->container['currency'] = $currency;
+        $this->container['message'] = $message;
 
         return $this;
     }
 
     /**
-     * Gets period
+     * Gets createdAt
      *
-     * @return \Pensopay\Client\Model\SettlementPeriod|null
+     * @return string
      */
-    public function getPeriod()
+    public function getCreatedAt()
     {
-        return $this->container['period'];
+        return $this->container['createdAt'];
     }
 
     /**
-     * Sets period
+     * Sets createdAt
      *
-     * @param \Pensopay\Client\Model\SettlementPeriod|null $period period
+     * @param string $createdAt createdAt
      *
      * @return self
      */
-    public function setPeriod($period)
+    public function setCreatedAt($createdAt)
     {
-        if (is_null($period)) {
-            throw new \InvalidArgumentException('non-nullable period cannot be null');
+        if (is_null($createdAt)) {
+            throw new \InvalidArgumentException('non-nullable createdAt cannot be null');
         }
-        $this->container['period'] = $period;
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }
 
     /**
-     * Gets payout
+     * Gets resourceId
      *
-     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
+     * @return int
      */
-    public function getPayout()
+    public function getResourceId()
     {
-        return $this->container['payout'];
+        return $this->container['resourceId'];
     }
 
     /**
-     * Sets payout
+     * Sets resourceId
      *
-     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $payout payout
+     * @param int $resourceId resourceId
      *
      * @return self
      */
-    public function setPayout($payout)
+    public function setResourceId($resourceId)
     {
-        if (is_null($payout)) {
-            throw new \InvalidArgumentException('non-nullable payout cannot be null');
+        if (is_null($resourceId)) {
+            throw new \InvalidArgumentException('non-nullable resourceId cannot be null');
         }
-        $this->container['payout'] = $payout;
+        $this->container['resourceId'] = $resourceId;
 
         return $this;
     }
 
     /**
-     * Gets summary
+     * Gets resource
      *
-     * @return \Pensopay\Client\Model\SettlementSummary|null
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
-    public function getSummary()
+    public function getResource()
     {
-        return $this->container['summary'];
+        return $this->container['resource'];
     }
 
     /**
-     * Sets summary
+     * Sets resource
      *
-     * @param \Pensopay\Client\Model\SettlementSummary|null $summary summary
+     * @param \Pensopay\Client\Model\PaymentPaymentResponse $resource resource
      *
      * @return self
      */
-    public function setSummary($summary)
+    public function setResource($resource)
     {
-        if (is_null($summary)) {
-            throw new \InvalidArgumentException('non-nullable summary cannot be null');
+        if (is_null($resource)) {
+            throw new \InvalidArgumentException('non-nullable resource cannot be null');
         }
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets reserve
-     *
-     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
-     */
-    public function getReserve()
-    {
-        return $this->container['reserve'];
-    }
-
-    /**
-     * Sets reserve
-     *
-     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $reserve reserve
-     *
-     * @return self
-     */
-    public function setReserve($reserve)
-    {
-        if (is_null($reserve)) {
-            throw new \InvalidArgumentException('non-nullable reserve cannot be null');
-        }
-        $this->container['reserve'] = $reserve;
-
-        return $this;
-    }
-
-    /**
-     * Gets fees
-     *
-     * @return \Pensopay\Client\Model\SettlementFees|null
-     */
-    public function getFees()
-    {
-        return $this->container['fees'];
-    }
-
-    /**
-     * Sets fees
-     *
-     * @param \Pensopay\Client\Model\SettlementFees|null $fees fees
-     *
-     * @return self
-     */
-    public function setFees($fees)
-    {
-        if (is_null($fees)) {
-            throw new \InvalidArgumentException('non-nullable fees cannot be null');
-        }
-        $this->container['fees'] = $fees;
-
-        return $this;
-    }
-
-    /**
-     * Gets otherPostings
-     *
-     * @return \Pensopay\Client\Model\SettlementPosting[]|null
-     */
-    public function getOtherPostings()
-    {
-        return $this->container['otherPostings'];
-    }
-
-    /**
-     * Sets otherPostings
-     *
-     * @param \Pensopay\Client\Model\SettlementPosting[]|null $otherPostings 
-     *
-     * @return self
-     */
-    public function setOtherPostings($otherPostings)
-    {
-        if (is_null($otherPostings)) {
-            throw new \InvalidArgumentException('non-nullable otherPostings cannot be null');
-        }
-        $this->container['otherPostings'] = $otherPostings;
+        $this->container['resource'] = $resource;
 
         return $this;
     }

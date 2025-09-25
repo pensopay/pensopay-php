@@ -17,5 +17,9 @@ composer.phar
 #Push file
 git_push.sh
 
+# Openapi generator
+openapispec.json
+target/
+
 #idea
 .idea/

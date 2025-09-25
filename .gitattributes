@@ -2,10 +2,11 @@
 *       text=auto eol=lf
 
 # Exclude non-essential files from dist
-./.gitignore export-ignore
-./.docs export-ignore
-./.travis.yml export-ignore
-./.openapi-generator export-ignore
-./.openapi-.php-cs-fixer.dist.php export-ignore
-./phpunit.xml.dist export-ignore
-./test export-ignore
+/.gitignore export-ignore
+/.docs export-ignore
+/.travis.yml export-ignore
+/.openapi-generator export-ignore
+/./Makefile export-ignore
+/.openapi-.php-cs-fixer.dist.php export-ignore
+/phpunit.xml.dist export-ignore
+/test export-ignore

@@ -1,6 +1,6 @@
 <?php
 /**
- * Settlement
+ * UpdateRuleRequest
  *
  * PHP version 8.1
  *
@@ -33,16 +33,15 @@ use \ArrayAccess;
 use \Pensopay\Client\ObjectSerializer;
 
 /**
- * Settlement Class Doc Comment
+ * UpdateRuleRequest Class Doc Comment
  *
  * @category Class
- * @description Settlement Struct
  * @package  Pensopay\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
+class UpdateRuleRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Settlement';
+    protected static $openAPIModelName = 'UpdateRuleRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +58,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'settled' => 'bool',
-        'currency' => 'string',
-        'period' => '\Pensopay\Client\Model\SettlementPeriod',
-        'payout' => '\Pensopay\Client\Model\SettlementPayoutReserve',
-        'summary' => '\Pensopay\Client\Model\SettlementSummary',
-        'reserve' => '\Pensopay\Client\Model\SettlementPayoutReserve',
-        'fees' => '\Pensopay\Client\Model\SettlementFees',
-        'otherPostings' => '\Pensopay\Client\Model\SettlementPosting[]'
+        'country' => 'string',
+        'segment' => 'string',
+        'funding' => 'string',
+        'scheme' => 'string',
+        'formula' => 'string'
     ];
 
     /**
@@ -78,15 +73,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'settled' => null,
-        'currency' => null,
-        'period' => null,
-        'payout' => null,
-        'summary' => null,
-        'reserve' => null,
-        'fees' => null,
-        'otherPostings' => null
+        'country' => null,
+        'segment' => null,
+        'funding' => null,
+        'scheme' => null,
+        'formula' => null
     ];
 
     /**
@@ -95,15 +86,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'settled' => false,
-        'currency' => false,
-        'period' => false,
-        'payout' => false,
-        'summary' => false,
-        'reserve' => false,
-        'fees' => false,
-        'otherPostings' => false
+        'country' => false,
+        'segment' => false,
+        'funding' => false,
+        'scheme' => false,
+        'formula' => false
     ];
 
     /**
@@ -192,15 +179,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'settled' => 'settled',
-        'currency' => 'currency',
-        'period' => 'period',
-        'payout' => 'payout',
-        'summary' => 'summary',
-        'reserve' => 'reserve',
-        'fees' => 'fees',
-        'otherPostings' => 'other_postings'
+        'country' => 'country',
+        'segment' => 'segment',
+        'funding' => 'funding',
+        'scheme' => 'scheme',
+        'formula' => 'formula'
     ];
 
     /**
@@ -209,15 +192,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'settled' => 'setSettled',
-        'currency' => 'setCurrency',
-        'period' => 'setPeriod',
-        'payout' => 'setPayout',
-        'summary' => 'setSummary',
-        'reserve' => 'setReserve',
-        'fees' => 'setFees',
-        'otherPostings' => 'setOtherPostings'
+        'country' => 'setCountry',
+        'segment' => 'setSegment',
+        'funding' => 'setFunding',
+        'scheme' => 'setScheme',
+        'formula' => 'setFormula'
     ];
 
     /**
@@ -226,15 +205,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'settled' => 'getSettled',
-        'currency' => 'getCurrency',
-        'period' => 'getPeriod',
-        'payout' => 'getPayout',
-        'summary' => 'getSummary',
-        'reserve' => 'getReserve',
-        'fees' => 'getFees',
-        'otherPostings' => 'getOtherPostings'
+        'country' => 'getCountry',
+        'segment' => 'getSegment',
+        'funding' => 'getFunding',
+        'scheme' => 'getScheme',
+        'formula' => 'getFormula'
     ];
 
     /**
@@ -278,6 +253,76 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const COUNTRY_EU = 'eu';
+    public const COUNTRY_NONEU = 'noneu';
+    public const COUNTRY_DK = 'dk';
+    public const SEGMENT_CONSUMER = 'consumer';
+    public const SEGMENT_BUSINESS = 'business';
+    public const SEGMENT_COMMERCIAL = 'commercial';
+    public const SEGMENT_GOVERNMENT = 'government';
+    public const SEGMENT_ALL = 'all';
+    public const SEGMENT_PAYOUTS = 'payouts';
+    public const FUNDING_EMPTY = '';
+    public const FUNDING_CREDIT = 'credit';
+    public const SCHEME_VISA = 'visa';
+    public const SCHEME_MASTERCARD = 'mastercard';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getCountryAllowableValues()
+    {
+        return [
+            self::COUNTRY_EU,
+            self::COUNTRY_NONEU,
+            self::COUNTRY_DK,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSegmentAllowableValues()
+    {
+        return [
+            self::SEGMENT_CONSUMER,
+            self::SEGMENT_BUSINESS,
+            self::SEGMENT_COMMERCIAL,
+            self::SEGMENT_GOVERNMENT,
+            self::SEGMENT_ALL,
+            self::SEGMENT_PAYOUTS,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getFundingAllowableValues()
+    {
+        return [
+            self::FUNDING_EMPTY,
+            self::FUNDING_CREDIT,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSchemeAllowableValues()
+    {
+        return [
+            self::SCHEME_VISA,
+            self::SCHEME_MASTERCARD,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -294,15 +339,11 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('settled', $data ?? [], null);
-        $this->setIfExists('currency', $data ?? [], null);
-        $this->setIfExists('period', $data ?? [], null);
-        $this->setIfExists('payout', $data ?? [], null);
-        $this->setIfExists('summary', $data ?? [], null);
-        $this->setIfExists('reserve', $data ?? [], null);
-        $this->setIfExists('fees', $data ?? [], null);
-        $this->setIfExists('otherPostings', $data ?? [], null);
+        $this->setIfExists('country', $data ?? [], null);
+        $this->setIfExists('segment', $data ?? [], null);
+        $this->setIfExists('funding', $data ?? [], null);
+        $this->setIfExists('scheme', $data ?? [], null);
+        $this->setIfExists('formula', $data ?? [], null);
     }
 
     /**
@@ -332,6 +373,46 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getCountryAllowableValues();
+        if (!is_null($this->container['country']) && !in_array($this->container['country'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'country', must be one of '%s'",
+                $this->container['country'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getSegmentAllowableValues();
+        if (!is_null($this->container['segment']) && !in_array($this->container['segment'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'segment', must be one of '%s'",
+                $this->container['segment'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getFundingAllowableValues();
+        if (!is_null($this->container['funding']) && !in_array($this->container['funding'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'funding', must be one of '%s'",
+                $this->container['funding'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getSchemeAllowableValues();
+        if (!is_null($this->container['scheme']) && !in_array($this->container['scheme'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'scheme', must be one of '%s'",
+                $this->container['scheme'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if (!is_null($this->container['formula']) && (mb_strlen($this->container['formula']) > 255)) {
+            $invalidProperties[] = "invalid value for 'formula', the character length must be smaller than or equal to 255.";
+        }
+
         return $invalidProperties;
     }
 
@@ -348,244 +429,180 @@ class Settlement implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets country
      *
      * @return string|null
      */
-    public function getId()
+    public function getCountry()
     {
-        return $this->container['id'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets id
+     * Sets country
      *
-     * @param string|null $id 
+     * @param string|null $country country
      *
      * @return self
      */
-    public function setId($id)
+    public function setCountry($country)
     {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        if (is_null($country)) {
+            throw new \InvalidArgumentException('non-nullable country cannot be null');
         }
-        $this->container['id'] = $id;
+        $allowedValues = $this->getCountryAllowableValues();
+        if (!in_array($country, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'country', must be one of '%s'",
+                    $country,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['country'] = $country;
 
         return $this;
     }
 
     /**
-     * Gets settled
-     *
-     * @return bool|null
-     */
-    public function getSettled()
-    {
-        return $this->container['settled'];
-    }
-
-    /**
-     * Sets settled
-     *
-     * @param bool|null $settled 
-     *
-     * @return self
-     */
-    public function setSettled($settled)
-    {
-        if (is_null($settled)) {
-            throw new \InvalidArgumentException('non-nullable settled cannot be null');
-        }
-        $this->container['settled'] = $settled;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
+     * Gets segment
      *
      * @return string|null
      */
-    public function getCurrency()
+    public function getSegment()
     {
-        return $this->container['currency'];
+        return $this->container['segment'];
     }
 
     /**
-     * Sets currency
+     * Sets segment
      *
-     * @param string|null $currency 
+     * @param string|null $segment segment
      *
      * @return self
      */
-    public function setCurrency($currency)
+    public function setSegment($segment)
     {
-        if (is_null($currency)) {
-            throw new \InvalidArgumentException('non-nullable currency cannot be null');
+        if (is_null($segment)) {
+            throw new \InvalidArgumentException('non-nullable segment cannot be null');
         }
-        $this->container['currency'] = $currency;
+        $allowedValues = $this->getSegmentAllowableValues();
+        if (!in_array($segment, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'segment', must be one of '%s'",
+                    $segment,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['segment'] = $segment;
 
         return $this;
     }
 
     /**
-     * Gets period
+     * Gets funding
      *
-     * @return \Pensopay\Client\Model\SettlementPeriod|null
+     * @return string|null
      */
-    public function getPeriod()
+    public function getFunding()
     {
-        return $this->container['period'];
+        return $this->container['funding'];
     }
 
     /**
-     * Sets period
+     * Sets funding
      *
-     * @param \Pensopay\Client\Model\SettlementPeriod|null $period period
+     * @param string|null $funding funding
      *
      * @return self
      */
-    public function setPeriod($period)
+    public function setFunding($funding)
     {
-        if (is_null($period)) {
-            throw new \InvalidArgumentException('non-nullable period cannot be null');
+        if (is_null($funding)) {
+            throw new \InvalidArgumentException('non-nullable funding cannot be null');
         }
-        $this->container['period'] = $period;
+        $allowedValues = $this->getFundingAllowableValues();
+        if (!in_array($funding, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'funding', must be one of '%s'",
+                    $funding,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['funding'] = $funding;
 
         return $this;
     }
 
     /**
-     * Gets payout
+     * Gets scheme
      *
-     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
+     * @return string|null
      */
-    public function getPayout()
+    public function getScheme()
     {
-        return $this->container['payout'];
+        return $this->container['scheme'];
     }
 
     /**
-     * Sets payout
+     * Sets scheme
      *
-     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $payout payout
+     * @param string|null $scheme scheme
      *
      * @return self
      */
-    public function setPayout($payout)
+    public function setScheme($scheme)
     {
-        if (is_null($payout)) {
-            throw new \InvalidArgumentException('non-nullable payout cannot be null');
+        if (is_null($scheme)) {
+            throw new \InvalidArgumentException('non-nullable scheme cannot be null');
         }
-        $this->container['payout'] = $payout;
+        $allowedValues = $this->getSchemeAllowableValues();
+        if (!in_array($scheme, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'scheme', must be one of '%s'",
+                    $scheme,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['scheme'] = $scheme;
 
         return $this;
     }
 
     /**
-     * Gets summary
+     * Gets formula
      *
-     * @return \Pensopay\Client\Model\SettlementSummary|null
+     * @return string|null
      */
-    public function getSummary()
+    public function getFormula()
     {
-        return $this->container['summary'];
+        return $this->container['formula'];
     }
 
     /**
-     * Sets summary
+     * Sets formula
      *
-     * @param \Pensopay\Client\Model\SettlementSummary|null $summary summary
+     * @param string|null $formula formula
      *
      * @return self
      */
-    public function setSummary($summary)
+    public function setFormula($formula)
     {
-        if (is_null($summary)) {
-            throw new \InvalidArgumentException('non-nullable summary cannot be null');
+        if (is_null($formula)) {
+            throw new \InvalidArgumentException('non-nullable formula cannot be null');
         }
-        $this->container['summary'] = $summary;
-
-        return $this;
-    }
-
-    /**
-     * Gets reserve
-     *
-     * @return \Pensopay\Client\Model\SettlementPayoutReserve|null
-     */
-    public function getReserve()
-    {
-        return $this->container['reserve'];
-    }
-
-    /**
-     * Sets reserve
-     *
-     * @param \Pensopay\Client\Model\SettlementPayoutReserve|null $reserve reserve
-     *
-     * @return self
-     */
-    public function setReserve($reserve)
-    {
-        if (is_null($reserve)) {
-            throw new \InvalidArgumentException('non-nullable reserve cannot be null');
+        if ((mb_strlen($formula) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $formula when calling UpdateRuleRequest., must be smaller than or equal to 255.');
         }
-        $this->container['reserve'] = $reserve;
 
-        return $this;
-    }
-
-    /**
-     * Gets fees
-     *
-     * @return \Pensopay\Client\Model\SettlementFees|null
-     */
-    public function getFees()
-    {
-        return $this->container['fees'];
-    }
-
-    /**
-     * Sets fees
-     *
-     * @param \Pensopay\Client\Model\SettlementFees|null $fees fees
-     *
-     * @return self
-     */
-    public function setFees($fees)
-    {
-        if (is_null($fees)) {
-            throw new \InvalidArgumentException('non-nullable fees cannot be null');
-        }
-        $this->container['fees'] = $fees;
-
-        return $this;
-    }
-
-    /**
-     * Gets otherPostings
-     *
-     * @return \Pensopay\Client\Model\SettlementPosting[]|null
-     */
-    public function getOtherPostings()
-    {
-        return $this->container['otherPostings'];
-    }
-
-    /**
-     * Sets otherPostings
-     *
-     * @param \Pensopay\Client\Model\SettlementPosting[]|null $otherPostings 
-     *
-     * @return self
-     */
-    public function setOtherPostings($otherPostings)
-    {
-        if (is_null($otherPostings)) {
-            throw new \InvalidArgumentException('non-nullable otherPostings cannot be null');
-        }
-        $this->container['otherPostings'] = $otherPostings;
+        $this->container['formula'] = $formula;
 
         return $this;
     }
