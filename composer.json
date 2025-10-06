@@ -1,6 +1,5 @@
 {
     "name": "pensopay/pensopay-php",
-    "version": "1.0.1",
     "description": "Acquire your payments using PHP with the pensopay API",
     "keywords": [
         "openapitools",
