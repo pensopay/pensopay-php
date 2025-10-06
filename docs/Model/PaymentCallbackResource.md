@@ -1,16 +1,14 @@
-# # FeeResponse
+# # PaymentCallbackResource
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  |
-**country** | **string** |  | [optional]
-**segment** | **string** |  | [optional]
-**funding** | **string** |  | [optional]
-**scheme** | **string** |  | [optional]
-**formula** | **string** |  |
-**updated_at** | **string** |  |
+**type** | **string** |  |
+**event** | **string** |  |
+**message** | **string** |  |
 **created_at** | **string** |  |
+**resource_id** | **int** |  |
+**resource** | [**\Pensopay\Client\Model\PaymentPaymentResponse**](PaymentPaymentResponse.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

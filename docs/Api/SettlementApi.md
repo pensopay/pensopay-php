@@ -97,7 +97,7 @@ $page = 1; // int | What page to view
 $settled = 'settled_example'; // bool | Filter by settled status, true or false.
 $currency = DKK; // string | Currency Code (ISO-4217).
 $date_from = 2024-08-20; // string | Find settlements with payout date after or during date_from. Takes an ISO-8601 date string.
-$date_to = 2024-08-30; // string | Find settlements with payout date before or during date_to. Takes an ISO-8601 date string.
+$date_to = 2024-08-20; // string | Find settlements with payout date before or during date_to. Takes an ISO-8601 date string.
 
 try {
     $result = $apiInstance->getSettlements($per_page, $page, $settled, $currency, $date_from, $date_to);

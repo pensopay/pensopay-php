@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **mandate_id** | **int** |  | [optional]
 **amount** | **int** |  | [optional]
 **currency** | **string** |  | [optional]
-**testmode** | **bool** |  | [optional]
 **autocapture** | **bool** |  | [optional]
+**text_on_statement** | **string** |  | [optional]
 **order** | **object** | Order information | [optional]
 **variables** | **array<string,string>** |  | [optional]
 **id** | **int** |  |

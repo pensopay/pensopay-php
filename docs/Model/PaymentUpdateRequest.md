@@ -1,13 +1,9 @@
-# # CreateFeeRequest
+# # PaymentUpdateRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**country** | **string** |  | [optional]
-**segment** | **string** |  | [optional]
-**funding** | **string** |  | [optional]
-**scheme** | **string** |  | [optional]
-**formula** | **string** |  |
+**variables** | **array<string,string>** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

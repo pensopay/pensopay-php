@@ -2,13 +2,13 @@
 
 Create and manage your Payments
 
-For more information, please visit [https://help.pensopay.com/hc/da](https://help.pensopay.com/hc/da).
+For more information, please visit [https://pensopay.com](https://pensopay.com).
 
 ## Installation & Usage
 
 ### Requirements
 
-PHP >= 8.1
+PHP 8.1 and later.
 
 ### Composer
 
@@ -67,12 +67,6 @@ All URIs are relative to *https://api.pensopay.com/v2*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountApi* | [**getAccount**](docs/Api/AccountApi.md#getaccount) | **GET** /account | Get account details
-*FeesApi* | [**createANewFee**](docs/Api/FeesApi.md#createanewfee) | **POST** /fees | Create a new fee
-*FeesApi* | [**deleteAFee**](docs/Api/FeesApi.md#deleteafee) | **DELETE** /fees/{fee} | Delete a fee
-*FeesApi* | [**getAFee**](docs/Api/FeesApi.md#getafee) | **GET** /fees/{fee} | Get a single fee
-*FeesApi* | [**getAListOfFees**](docs/Api/FeesApi.md#getalistoffees) | **GET** /fees | Get auto-fees configured for account
-*FeesApi* | [**testFees**](docs/Api/FeesApi.md#testfees) | **POST** /fees/test | Test fees for account
-*FeesApi* | [**updateAFee**](docs/Api/FeesApi.md#updateafee) | **PATCH** /fees/{fee} | Update a fee
 *HealthcheckApi* | [**pingGet**](docs/Api/HealthcheckApi.md#pingget) | **GET** /ping | Healthcheck
 *HealthcheckApi* | [**pingPost**](docs/Api/HealthcheckApi.md#pingpost) | **POST** /ping | Healthcheck
 *MethodsApi* | [**getMethods**](docs/Api/MethodsApi.md#getmethods) | **GET** /methods | Get methods for account
@@ -86,6 +80,7 @@ Class | Method | HTTP request | Description
 *PaymentsApi* | [**getPaymentEvents**](docs/Api/PaymentsApi.md#getpaymentevents) | **GET** /payments/{id}/events | Get events for a given payment
 *PaymentsApi* | [**getPayments**](docs/Api/PaymentsApi.md#getpayments) | **GET** /payments | Get payments
 *PaymentsApi* | [**refundPayment**](docs/Api/PaymentsApi.md#refundpayment) | **POST** /payments/{id}/refund | Refund payment
+*PaymentsApi* | [**updatePayment**](docs/Api/PaymentsApi.md#updatepayment) | **PATCH** /payments/{id} | Update Payment
 *RulesApi* | [**createRule**](docs/Api/RulesApi.md#createrule) | **POST** /rules | 
 *RulesApi* | [**deleteRule**](docs/Api/RulesApi.md#deleterule) | **DELETE** /rules/{id} | 
 *RulesApi* | [**getRules**](docs/Api/RulesApi.md#getrules) | **GET** /rules | 
@@ -98,22 +93,29 @@ Class | Method | HTTP request | Description
 *SubscriptionsApi* | [**createANewSubscription**](docs/Api/SubscriptionsApi.md#createanewsubscription) | **POST** /subscriptions | Create a new subscription
 *SubscriptionsApi* | [**createPayment1**](docs/Api/SubscriptionsApi.md#createpayment1) | **POST** /subscriptions/{subscription}/payments | Create payment
 *SubscriptionsApi* | [**getAListOfMandates**](docs/Api/SubscriptionsApi.md#getalistofmandates) | **GET** /subscriptions/{subscription}/mandates | Get a list of mandates
+*SubscriptionsApi* | [**getAListOfPayments**](docs/Api/SubscriptionsApi.md#getalistofpayments) | **GET** /subscriptions/{subscription}/payments | Get payments
 *SubscriptionsApi* | [**getAListOfSubscriptions**](docs/Api/SubscriptionsApi.md#getalistofsubscriptions) | **GET** /subscriptions | Get a list of subscriptions
 *SubscriptionsApi* | [**getSingleMandate**](docs/Api/SubscriptionsApi.md#getsinglemandate) | **GET** /subscriptions/{subscription}/mandates/{mandate} | Get single mandate
 *SubscriptionsApi* | [**getSingleSubscription**](docs/Api/SubscriptionsApi.md#getsinglesubscription) | **GET** /subscriptions/{subscription} | Get single subscription
 *SubscriptionsApi* | [**revokeAMandate**](docs/Api/SubscriptionsApi.md#revokeamandate) | **POST** /subscriptions/{subscription}/mandates/{mandate}/revoke | Revoke a mandate
 *SubscriptionsApi* | [**updateASubscription**](docs/Api/SubscriptionsApi.md#updateasubscription) | **PATCH** /subscriptions/{subscription} | Update a subscription
+*SurchargeApi* | [**createANewRule**](docs/Api/SurchargeApi.md#createanewrule) | **POST** /surcharge | Create a new rule
+*SurchargeApi* | [**deleteARule**](docs/Api/SurchargeApi.md#deletearule) | **DELETE** /surcharge/{rule} | Delete a rule
+*SurchargeApi* | [**getAListOfRules**](docs/Api/SurchargeApi.md#getalistofrules) | **GET** /surcharge | Get surcharge configuration for account
+*SurchargeApi* | [**getARule**](docs/Api/SurchargeApi.md#getarule) | **GET** /surcharge/{rule} | Get a single rule
+*SurchargeApi* | [**testRules**](docs/Api/SurchargeApi.md#testrules) | **POST** /surcharge/test | Test surcharge for account
+*SurchargeApi* | [**updateARule**](docs/Api/SurchargeApi.md#updatearule) | **PATCH** /surcharge/{rule} | Update a rule
 
 ## Models
 
 - [Account](docs/Model/Account.md)
 - [ConditionBase](docs/Model/ConditionBase.md)
-- [CreateFeeRequest](docs/Model/CreateFeeRequest.md)
+- [CreateRuleRequest](docs/Model/CreateRuleRequest.md)
 - [CreateSubscriptionRequest](docs/Model/CreateSubscriptionRequest.md)
 - [ErrorMessage](docs/Model/ErrorMessage.md)
-- [FeeResponse](docs/Model/FeeResponse.md)
-- [GetAListOfFees200Response](docs/Model/GetAListOfFees200Response.md)
+- [ErrorMessage1](docs/Model/ErrorMessage1.md)
 - [GetAListOfMandates200Response](docs/Model/GetAListOfMandates200Response.md)
+- [GetAListOfRules200Response](docs/Model/GetAListOfRules200Response.md)
 - [GetAListOfSubscriptions200Response](docs/Model/GetAListOfSubscriptions200Response.md)
 - [GetPaymentEvents200Response](docs/Model/GetPaymentEvents200Response.md)
 - [GetRules200Response](docs/Model/GetRules200Response.md)
@@ -125,12 +127,14 @@ Class | Method | HTTP request | Description
 - [NewRule](docs/Model/NewRule.md)
 - [Pagination](docs/Model/Pagination.md)
 - [PaymentBase](docs/Model/PaymentBase.md)
+- [PaymentCallbackResource](docs/Model/PaymentCallbackResource.md)
 - [PaymentCapturePaymentRequest](docs/Model/PaymentCapturePaymentRequest.md)
 - [PaymentCreatePaymentRequest](docs/Model/PaymentCreatePaymentRequest.md)
 - [PaymentEvent](docs/Model/PaymentEvent.md)
 - [PaymentMeta](docs/Model/PaymentMeta.md)
 - [PaymentPaymentAddress](docs/Model/PaymentPaymentAddress.md)
 - [PaymentPaymentBasket](docs/Model/PaymentPaymentBasket.md)
+- [PaymentPaymentDetails](docs/Model/PaymentPaymentDetails.md)
 - [PaymentPaymentOrder](docs/Model/PaymentPaymentOrder.md)
 - [PaymentPaymentResponse](docs/Model/PaymentPaymentResponse.md)
 - [PaymentPaymentsMeta](docs/Model/PaymentPaymentsMeta.md)
@@ -138,9 +142,11 @@ Class | Method | HTTP request | Description
 - [PaymentRefundPaymentRequest](docs/Model/PaymentRefundPaymentRequest.md)
 - [PaymentResponse](docs/Model/PaymentResponse.md)
 - [PaymentShipping](docs/Model/PaymentShipping.md)
+- [PaymentUpdateRequest](docs/Model/PaymentUpdateRequest.md)
 - [ResponseMeta](docs/Model/ResponseMeta.md)
 - [RuleBase](docs/Model/RuleBase.md)
 - [RuleResponse](docs/Model/RuleResponse.md)
+- [RuleResponse1](docs/Model/RuleResponse1.md)
 - [Settlement](docs/Model/Settlement.md)
 - [SettlementFees](docs/Model/SettlementFees.md)
 - [SettlementPayoutReserve](docs/Model/SettlementPayoutReserve.md)
@@ -152,15 +158,14 @@ Class | Method | HTTP request | Description
 - [SubscriptionBase](docs/Model/SubscriptionBase.md)
 - [SubscriptionMeta](docs/Model/SubscriptionMeta.md)
 - [SubscriptionResponse](docs/Model/SubscriptionResponse.md)
-- [TestFeeRequest](docs/Model/TestFeeRequest.md)
-- [TestFeeResponse](docs/Model/TestFeeResponse.md)
+- [TestRulesRequest](docs/Model/TestRulesRequest.md)
+- [TestRulesResponse](docs/Model/TestRulesResponse.md)
 - [TransactionResponse](docs/Model/TransactionResponse.md)
-- [TransactionResponseSettlement](docs/Model/TransactionResponseSettlement.md)
 - [TransactionSettlement](docs/Model/TransactionSettlement.md)
 - [TransactionSettlementFeeDetail](docs/Model/TransactionSettlementFeeDetail.md)
 - [TransactionsResponse](docs/Model/TransactionsResponse.md)
-- [UpdateFeeRequest](docs/Model/UpdateFeeRequest.md)
 - [UpdateRule](docs/Model/UpdateRule.md)
+- [UpdateRuleRequest](docs/Model/UpdateRuleRequest.md)
 - [UpdateSubscriptionRequest](docs/Model/UpdateSubscriptionRequest.md)
 
 ## Authorization
@@ -184,5 +189,5 @@ vendor/bin/phpunit
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
 - API version: `2.0.0`
-    - Generator version: `7.8.0`
+    - Generator version: `7.16.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

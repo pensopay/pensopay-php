@@ -1,24 +1,24 @@
-# Pensopay\Client\FeesApi
+# Pensopay\Client\SurchargeApi
 
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createANewFee()**](FeesApi.md#createANewFee) | **POST** /fees | Create a new fee |
-| [**deleteAFee()**](FeesApi.md#deleteAFee) | **DELETE** /fees/{fee} | Delete a fee |
-| [**getAFee()**](FeesApi.md#getAFee) | **GET** /fees/{fee} | Get a single fee |
-| [**getAListOfFees()**](FeesApi.md#getAListOfFees) | **GET** /fees | Get auto-fees configured for account |
-| [**testFees()**](FeesApi.md#testFees) | **POST** /fees/test | Test fees for account |
-| [**updateAFee()**](FeesApi.md#updateAFee) | **PATCH** /fees/{fee} | Update a fee |
+| [**createANewRule()**](SurchargeApi.md#createANewRule) | **POST** /surcharge | Create a new rule |
+| [**deleteARule()**](SurchargeApi.md#deleteARule) | **DELETE** /surcharge/{rule} | Delete a rule |
+| [**getAListOfRules()**](SurchargeApi.md#getAListOfRules) | **GET** /surcharge | Get surcharge configuration for account |
+| [**getARule()**](SurchargeApi.md#getARule) | **GET** /surcharge/{rule} | Get a single rule |
+| [**testRules()**](SurchargeApi.md#testRules) | **POST** /surcharge/test | Test surcharge for account |
+| [**updateARule()**](SurchargeApi.md#updateARule) | **PATCH** /surcharge/{rule} | Update a rule |
 
 
-## `createANewFee()`
+## `createANewRule()`
 
 ```php
-createANewFee($create_fee_request): \Pensopay\Client\Model\FeeResponse
+createANewRule($create_rule_request): \Pensopay\Client\Model\RuleResponse1
 ```
 
-Create a new fee
+Create a new rule
 
 ### Example
 
@@ -31,19 +31,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Pensopay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\SurchargeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$create_fee_request = new \Pensopay\Client\Model\CreateFeeRequest(); // \Pensopay\Client\Model\CreateFeeRequest
+$create_rule_request = new \Pensopay\Client\Model\CreateRuleRequest(); // \Pensopay\Client\Model\CreateRuleRequest
 
 try {
-    $result = $apiInstance->createANewFee($create_fee_request);
+    $result = $apiInstance->createANewRule($create_rule_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FeesApi->createANewFee: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SurchargeApi->createANewRule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -51,11 +51,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **create_fee_request** | [**\Pensopay\Client\Model\CreateFeeRequest**](../Model/CreateFeeRequest.md)|  | |
+| **create_rule_request** | [**\Pensopay\Client\Model\CreateRuleRequest**](../Model/CreateRuleRequest.md)|  | |
 
 ### Return type
 
-[**\Pensopay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
+[**\Pensopay\Client\Model\RuleResponse1**](../Model/RuleResponse1.md)
 
 ### Authorization
 
@@ -70,13 +70,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `deleteAFee()`
+## `deleteARule()`
 
 ```php
-deleteAFee($fee)
+deleteARule($rule)
 ```
 
-Delete a fee
+Delete a rule
 
 ### Example
 
@@ -89,18 +89,18 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Pensopay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\SurchargeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$fee = 56; // int | The Fee ID.
+$rule = 56; // int | The Rule ID.
 
 try {
-    $apiInstance->deleteAFee($fee);
+    $apiInstance->deleteARule($rule);
 } catch (Exception $e) {
-    echo 'Exception when calling FeesApi->deleteAFee: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SurchargeApi->deleteARule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -108,7 +108,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **fee** | **int**| The Fee ID. | |
+| **rule** | **int**| The Rule ID. | |
 
 ### Return type
 
@@ -127,13 +127,13 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getAFee()`
+## `getAListOfRules()`
 
 ```php
-getAFee($fee): \Pensopay\Client\Model\FeeResponse
+getAListOfRules($per_page, $page): \Pensopay\Client\Model\GetAListOfRules200Response
 ```
 
-Get a single fee
+Get surcharge configuration for account
 
 ### Example
 
@@ -146,65 +146,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Pensopay\Client\Api\FeesApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$fee = 56; // int | The Fee ID.
-
-try {
-    $result = $apiInstance->getAFee($fee);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling FeesApi->getAFee: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **fee** | **int**| The Fee ID. | |
-
-### Return type
-
-[**\Pensopay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
-
-### Authorization
-
-[default](../../README.md#default)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getAListOfFees()`
-
-```php
-getAListOfFees($per_page, $page): \Pensopay\Client\Model\GetAListOfFees200Response
-```
-
-Get auto-fees configured for account
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer authorization: default
-$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Pensopay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\SurchargeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -214,10 +156,10 @@ $per_page = 100; // int | How many results to list per page between 1 and 100, d
 $page = 1; // int | What page to view.
 
 try {
-    $result = $apiInstance->getAListOfFees($per_page, $page);
+    $result = $apiInstance->getAListOfRules($per_page, $page);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FeesApi->getAListOfFees: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SurchargeApi->getAListOfRules: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -230,7 +172,7 @@ try {
 
 ### Return type
 
-[**\Pensopay\Client\Model\GetAListOfFees200Response**](../Model/GetAListOfFees200Response.md)
+[**\Pensopay\Client\Model\GetAListOfRules200Response**](../Model/GetAListOfRules200Response.md)
 
 ### Authorization
 
@@ -245,13 +187,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `testFees()`
+## `getARule()`
 
 ```php
-testFees($test_fee_request): \Pensopay\Client\Model\TestFeeResponse
+getARule($rule): \Pensopay\Client\Model\RuleResponse1
 ```
 
-Test fees for account
+Get a single rule
 
 ### Example
 
@@ -264,19 +206,19 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Pensopay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\SurchargeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$test_fee_request = new \Pensopay\Client\Model\TestFeeRequest(); // \Pensopay\Client\Model\TestFeeRequest
+$rule = 56; // int | The Rule ID.
 
 try {
-    $result = $apiInstance->testFees($test_fee_request);
+    $result = $apiInstance->getARule($rule);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FeesApi->testFees: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SurchargeApi->getARule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -284,11 +226,69 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **test_fee_request** | [**\Pensopay\Client\Model\TestFeeRequest**](../Model/TestFeeRequest.md)|  | |
+| **rule** | **int**| The Rule ID. | |
 
 ### Return type
 
-[**\Pensopay\Client\Model\TestFeeResponse**](../Model/TestFeeResponse.md)
+[**\Pensopay\Client\Model\RuleResponse1**](../Model/RuleResponse1.md)
+
+### Authorization
+
+[default](../../README.md#default)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `testRules()`
+
+```php
+testRules($test_rules_request): \Pensopay\Client\Model\TestRulesResponse
+```
+
+Test surcharge for account
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: default
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Pensopay\Client\Api\SurchargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$test_rules_request = new \Pensopay\Client\Model\TestRulesRequest(); // \Pensopay\Client\Model\TestRulesRequest
+
+try {
+    $result = $apiInstance->testRules($test_rules_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SurchargeApi->testRules: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **test_rules_request** | [**\Pensopay\Client\Model\TestRulesRequest**](../Model/TestRulesRequest.md)|  | |
+
+### Return type
+
+[**\Pensopay\Client\Model\TestRulesResponse**](../Model/TestRulesResponse.md)
 
 ### Authorization
 
@@ -303,13 +303,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `updateAFee()`
+## `updateARule()`
 
 ```php
-updateAFee($fee, $update_fee_request): \Pensopay\Client\Model\FeeResponse
+updateARule($rule, $update_rule_request): \Pensopay\Client\Model\RuleResponse1
 ```
 
-Update a fee
+Update a rule
 
 ### Example
 
@@ -322,20 +322,20 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Pensopay\Client\Api\FeesApi(
+$apiInstance = new Pensopay\Client\Api\SurchargeApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$fee = 56; // int | The Fee ID.
-$update_fee_request = new \Pensopay\Client\Model\UpdateFeeRequest(); // \Pensopay\Client\Model\UpdateFeeRequest
+$rule = 56; // int | The Rule ID.
+$update_rule_request = new \Pensopay\Client\Model\UpdateRuleRequest(); // \Pensopay\Client\Model\UpdateRuleRequest
 
 try {
-    $result = $apiInstance->updateAFee($fee, $update_fee_request);
+    $result = $apiInstance->updateARule($rule, $update_rule_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FeesApi->updateAFee: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SurchargeApi->updateARule: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -343,12 +343,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **fee** | **int**| The Fee ID. | |
-| **update_fee_request** | [**\Pensopay\Client\Model\UpdateFeeRequest**](../Model/UpdateFeeRequest.md)|  | |
+| **rule** | **int**| The Rule ID. | |
+| **update_rule_request** | [**\Pensopay\Client\Model\UpdateRuleRequest**](../Model/UpdateRuleRequest.md)|  | |
 
 ### Return type
 
-[**\Pensopay\Client\Model\FeeResponse**](../Model/FeeResponse.md)
+[**\Pensopay\Client\Model\RuleResponse1**](../Model/RuleResponse1.md)
 
 ### Authorization
 

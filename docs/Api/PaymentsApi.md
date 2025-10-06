@@ -12,6 +12,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 | [**getPaymentEvents()**](PaymentsApi.md#getPaymentEvents) | **GET** /payments/{id}/events | Get events for a given payment |
 | [**getPayments()**](PaymentsApi.md#getPayments) | **GET** /payments | Get payments |
 | [**refundPayment()**](PaymentsApi.md#refundPayment) | **POST** /payments/{id}/refund | Refund payment |
+| [**updatePayment()**](PaymentsApi.md#updatePayment) | **PATCH** /payments/{id} | Update Payment |
 
 
 ## `anonymizePayment()`
@@ -396,7 +397,7 @@ $apiInstance = new Pensopay\Client\Api\PaymentsApi(
     $config
 );
 $order_id = 'order_id_example'; // string | Find payments matching order_id
-$per_page = 56; // int | How many results to list per page between 1 and 100, defaults to 15.
+$per_page = 56; // int | How many results to list per page between 1 and 250, defaults to 15.
 $page = 56; // int | What page to view.
 $currency = 'currency_example'; // string | Find payments with currency
 $date_from = 'date_from_example'; // string | Find payments created after date_from, takes an iso-8601 date or datetime string
@@ -417,7 +418,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **order_id** | **string**| Find payments matching order_id | [optional] |
-| **per_page** | **int**| How many results to list per page between 1 and 100, defaults to 15. | [optional] |
+| **per_page** | **int**| How many results to list per page between 1 and 250, defaults to 15. | [optional] |
 | **page** | **int**| What page to view. | [optional] |
 | **currency** | **string**| Find payments with currency | [optional] |
 | **date_from** | **string**| Find payments created after date_from, takes an iso-8601 date or datetime string | [optional] |
@@ -484,6 +485,68 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **id** | **int**| Id of the payment to refund | |
 | **payment_refund_payment_request** | [**\Pensopay\Client\Model\PaymentRefundPaymentRequest**](../Model/PaymentRefundPaymentRequest.md)| payment | [optional] |
+
+### Return type
+
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
+
+### Authorization
+
+[default](../../README.md#default)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updatePayment()`
+
+```php
+updatePayment($id, $payment_update_request): \Pensopay\Client\Model\PaymentPaymentResponse
+```
+
+Update Payment
+
+It is possible to update the variables on a payment regardless of state of the payment.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: default
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Pensopay\Client\Api\PaymentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = 56; // int | Id of the payment to update
+$payment_update_request = new \Pensopay\Client\Model\PaymentUpdateRequest(); // \Pensopay\Client\Model\PaymentUpdateRequest | payment update request
+
+try {
+    $result = $apiInstance->updatePayment($id, $payment_update_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PaymentsApi->updatePayment: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **int**| Id of the payment to update | |
+| **payment_update_request** | [**\Pensopay\Client\Model\PaymentUpdateRequest**](../Model/PaymentUpdateRequest.md)| payment update request | |
 
 ### Return type
 

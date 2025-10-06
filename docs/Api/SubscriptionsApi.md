@@ -9,6 +9,7 @@ All URIs are relative to https://api.pensopay.com/v2, except if the operation de
 | [**createANewSubscription()**](SubscriptionsApi.md#createANewSubscription) | **POST** /subscriptions | Create a new subscription |
 | [**createPayment1()**](SubscriptionsApi.md#createPayment1) | **POST** /subscriptions/{subscription}/payments | Create payment |
 | [**getAListOfMandates()**](SubscriptionsApi.md#getAListOfMandates) | **GET** /subscriptions/{subscription}/mandates | Get a list of mandates |
+| [**getAListOfPayments()**](SubscriptionsApi.md#getAListOfPayments) | **GET** /subscriptions/{subscription}/payments | Get payments |
 | [**getAListOfSubscriptions()**](SubscriptionsApi.md#getAListOfSubscriptions) | **GET** /subscriptions | Get a list of subscriptions |
 | [**getSingleMandate()**](SubscriptionsApi.md#getSingleMandate) | **GET** /subscriptions/{subscription}/mandates/{mandate} | Get single mandate |
 | [**getSingleSubscription()**](SubscriptionsApi.md#getSingleSubscription) | **GET** /subscriptions/{subscription} | Get single subscription |
@@ -310,6 +311,82 @@ try {
 ### Return type
 
 [**\Pensopay\Client\Model\GetAListOfMandates200Response**](../Model/GetAListOfMandates200Response.md)
+
+### Authorization
+
+[default](../../README.md#default)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAListOfPayments()`
+
+```php
+getAListOfPayments($subscription, $order_id, $per_page, $page, $currency, $date_from, $date_to, $updated_after, $updated_before): \Pensopay\Client\Model\PaymentPaymentsResponse
+```
+
+Get payments
+
+Fetch all payments for the subscription
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: default
+$config = Pensopay\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Pensopay\Client\Api\SubscriptionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$subscription = 56; // int | The subscription ID.
+$order_id = 'order_id_example'; // string | Find payments matching order_id
+$per_page = 56; // int | How many results to list per page between 1 and 100, defaults to 15.
+$page = 56; // int | What page to view.
+$currency = 'currency_example'; // string | Find payments with currency
+$date_from = 'date_from_example'; // string | Find payments created after date_from, takes an iso-8601 date or datetime string
+$date_to = 'date_to_example'; // string | Find payments created before or until date_to, takes an iso-8601 date or datetime string
+$updated_after = 'updated_after_example'; // string | Find payment updated after
+$updated_before = 'updated_before_example'; // string | Find payment updated before
+
+try {
+    $result = $apiInstance->getAListOfPayments($subscription, $order_id, $per_page, $page, $currency, $date_from, $date_to, $updated_after, $updated_before);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionsApi->getAListOfPayments: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **subscription** | **int**| The subscription ID. | |
+| **order_id** | **string**| Find payments matching order_id | [optional] |
+| **per_page** | **int**| How many results to list per page between 1 and 100, defaults to 15. | [optional] |
+| **page** | **int**| What page to view. | [optional] |
+| **currency** | **string**| Find payments with currency | [optional] |
+| **date_from** | **string**| Find payments created after date_from, takes an iso-8601 date or datetime string | [optional] |
+| **date_to** | **string**| Find payments created before or until date_to, takes an iso-8601 date or datetime string | [optional] |
+| **updated_after** | **string**| Find payment updated after | [optional] |
+| **updated_before** | **string**| Find payment updated before | [optional] |
+
+### Return type
+
+[**\Pensopay\Client\Model\PaymentPaymentsResponse**](../Model/PaymentPaymentsResponse.md)
 
 ### Authorization
 

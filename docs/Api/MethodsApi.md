@@ -146,7 +146,7 @@ $apiInstance = new Pensopay\Client\Api\MethodsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = "/path/to/file.txt"; // \SplFileObject
+$body = '/path/to/file.txt'; // \SplFileObject
 
 try {
     $result = $apiInstance->putMobilepayLogo($body);

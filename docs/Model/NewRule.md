@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **string** |  |
-**operator** | **string** |  |
-**conditions** | [**\Pensopay\Client\Model\ConditionBase[]**](ConditionBase.md) |  |
+**action** | **string** |  | [optional]
+**operator** | **string** |  | [optional]
+**conditions** | [**\Pensopay\Client\Model\ConditionBase[]**](ConditionBase.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
