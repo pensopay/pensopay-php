@@ -202,7 +202,7 @@ try {
 ## `createPayment1()`
 
 ```php
-createPayment1($subscription, $payment_base): \Pensopay\Client\Model\PaymentResponse
+createPayment1($subscription, $payment_base): \Pensopay\Client\Model\PaymentPaymentResponse
 ```
 
 Create payment
@@ -246,7 +246,7 @@ try {
 
 ### Return type
 
-[**\Pensopay\Client\Model\PaymentResponse**](../Model/PaymentResponse.md)
+[**\Pensopay\Client\Model\PaymentPaymentResponse**](../Model/PaymentPaymentResponse.md)
 
 ### Authorization
 

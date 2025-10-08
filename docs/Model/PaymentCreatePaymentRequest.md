@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **cancel_url** | **string** |  | [optional]
 **currency** | **string** | The currency in ISO 4217 format |
 **locale** | **string** | Locale to use in payment window | [optional]
-**methods** | **string[]** | The following payment methods can be defined as available when creating the payment. _Ex._ if &#x60;[\&quot;card\&quot;]&#x60; is sent all available card methods for the account will be available.  **card** - dankort - mastercard - visa - visadebit / visaelectron - mastercarddebit  **wallet** - mobilepay - vippspsp - googlepay - applepay  **paylater** - anyday - viabill  **thirdparty** - paypal - klarna  **banktransfer** - swish | [optional]
+**methods** | **string[]** | The following payment methods can be defined as available when creating the payment. _Ex._ if &#x60;[\&quot;card\&quot;]&#x60; is sent all available card methods for the account will be available.  **card** - dankort - mastercard - visa - visadebit / visaelectron - mastercarddebit  **wallet** - mobilepay - vippspsp - googlepay - applepay  **paylater** - anyday - viabill  **thirdparty** - paypal - klarna - stripe_klarna  **banktransfer** - swish - stripe_ideal | [optional]
 **order** | [**\Pensopay\Client\Model\PaymentPaymentOrder**](PaymentPaymentOrder.md) |  | [optional]
 **order_id** | **string** |  |
 **success_url** | **string** |  | [optional]

@@ -1001,7 +1001,7 @@ class SubscriptionsApi
      *
      * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Pensopay\Client\Model\PaymentResponse
+     * @return \Pensopay\Client\Model\PaymentPaymentResponse
      */
     public function createPayment1($subscription, $payment_base, string $contentType = self::contentTypes['createPayment1'][0])
     {
@@ -1020,7 +1020,7 @@ class SubscriptionsApi
      *
      * @throws \Pensopay\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Pensopay\Client\Model\PaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Pensopay\Client\Model\PaymentPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPayment1WithHttpInfo($subscription, $payment_base, string $contentType = self::contentTypes['createPayment1'][0])
     {
@@ -1052,7 +1052,7 @@ class SubscriptionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Pensopay\Client\Model\PaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $request,
                         $response,
                     );
@@ -1074,7 +1074,7 @@ class SubscriptionsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Pensopay\Client\Model\PaymentResponse',
+                '\Pensopay\Client\Model\PaymentPaymentResponse',
                 $request,
                 $response,
             );
@@ -1083,7 +1083,7 @@ class SubscriptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Pensopay\Client\Model\PaymentResponse',
+                        '\Pensopay\Client\Model\PaymentPaymentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1131,7 +1131,7 @@ class SubscriptionsApi
      */
     public function createPayment1AsyncWithHttpInfo($subscription, $payment_base, string $contentType = self::contentTypes['createPayment1'][0])
     {
-        $returnType = '\Pensopay\Client\Model\PaymentResponse';
+        $returnType = '\Pensopay\Client\Model\PaymentPaymentResponse';
         $request = $this->createPayment1Request($subscription, $payment_base, $contentType);
 
         return $this->client

@@ -62,7 +62,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'int',
         'date' => 'string',
         'cancelled_date' => 'string',
-        'reference_mumber' => 'string',
+        'reference_number' => 'string',
         'descriptor' => 'string'
     ];
 
@@ -77,7 +77,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => null,
         'date' => null,
         'cancelled_date' => null,
-        'reference_mumber' => null,
+        'reference_number' => null,
         'descriptor' => null
     ];
 
@@ -90,7 +90,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => false,
         'date' => false,
         'cancelled_date' => false,
-        'reference_mumber' => false,
+        'reference_number' => false,
         'descriptor' => false
     ];
 
@@ -183,7 +183,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'amount',
         'date' => 'date',
         'cancelled_date' => 'cancelled_date',
-        'reference_mumber' => 'reference_mumber',
+        'reference_number' => 'reference_number',
         'descriptor' => 'descriptor'
     ];
 
@@ -196,7 +196,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'setAmount',
         'date' => 'setDate',
         'cancelled_date' => 'setCancelledDate',
-        'reference_mumber' => 'setReferenceMumber',
+        'reference_number' => 'setReferenceNumber',
         'descriptor' => 'setDescriptor'
     ];
 
@@ -209,7 +209,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         'amount' => 'getAmount',
         'date' => 'getDate',
         'cancelled_date' => 'getCancelledDate',
-        'reference_mumber' => 'getReferenceMumber',
+        'reference_number' => 'getReferenceNumber',
         'descriptor' => 'getDescriptor'
     ];
 
@@ -273,7 +273,7 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('date', $data ?? [], null);
         $this->setIfExists('cancelled_date', $data ?? [], null);
-        $this->setIfExists('reference_mumber', $data ?? [], null);
+        $this->setIfExists('reference_number', $data ?? [], null);
         $this->setIfExists('descriptor', $data ?? [], null);
     }
 
@@ -401,28 +401,28 @@ class SettlementPayoutReserve implements ModelInterface, ArrayAccess, \JsonSeria
     }
 
     /**
-     * Gets reference_mumber
+     * Gets reference_number
      *
      * @return string|null
      */
-    public function getReferenceMumber()
+    public function getReferenceNumber()
     {
-        return $this->container['reference_mumber'];
+        return $this->container['reference_number'];
     }
 
     /**
-     * Sets reference_mumber
+     * Sets reference_number
      *
-     * @param string|null $reference_mumber 
+     * @param string|null $reference_number 
      *
      * @return self
      */
-    public function setReferenceMumber($reference_mumber)
+    public function setReferenceNumber($reference_number)
     {
-        if (is_null($reference_mumber)) {
-            throw new \InvalidArgumentException('non-nullable reference_mumber cannot be null');
+        if (is_null($reference_number)) {
+            throw new \InvalidArgumentException('non-nullable reference_number cannot be null');
         }
-        $this->container['reference_mumber'] = $reference_mumber;
+        $this->container['reference_number'] = $reference_number;
 
         return $this;
     }

@@ -327,8 +327,8 @@ class PaymentBase implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['order_id'] === null) {
             $invalidProperties[] = "'order_id' can't be null";
         }
-        if ((mb_strlen($this->container['order_id']) > 30)) {
-            $invalidProperties[] = "invalid value for 'order_id', the character length must be smaller than or equal to 30.";
+        if ((mb_strlen($this->container['order_id']) > 36)) {
+            $invalidProperties[] = "invalid value for 'order_id', the character length must be smaller than or equal to 36.";
         }
 
         if ((mb_strlen($this->container['order_id']) < 1)) {
@@ -388,8 +388,8 @@ class PaymentBase implements ModelInterface, ArrayAccess, \JsonSerializable
         if (is_null($order_id)) {
             throw new \InvalidArgumentException('non-nullable order_id cannot be null');
         }
-        if ((mb_strlen($order_id) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $order_id when calling PaymentBase., must be smaller than or equal to 30.');
+        if ((mb_strlen($order_id) > 36)) {
+            throw new \InvalidArgumentException('invalid length for $order_id when calling PaymentBase., must be smaller than or equal to 36.');
         }
         if ((mb_strlen($order_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $order_id when calling PaymentBase., must be bigger than or equal to 1.');

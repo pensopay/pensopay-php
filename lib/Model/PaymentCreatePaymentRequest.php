@@ -339,6 +339,8 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
     public const METHODS_THIRDPARTY = 'thirdparty';
     public const METHODS_PAYPAL = 'paypal';
     public const METHODS_KLARNA = 'klarna';
+    public const METHODS_STRIPE_KLARNA = 'stripe_klarna';
+    public const METHODS_STRIPE_IDEAL = 'stripe_ideal';
 
     /**
      * Gets allowable values of the enum
@@ -368,6 +370,8 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
             self::METHODS_THIRDPARTY,
             self::METHODS_PAYPAL,
             self::METHODS_KLARNA,
+            self::METHODS_STRIPE_KLARNA,
+            self::METHODS_STRIPE_IDEAL,
         ];
     }
 
@@ -731,7 +735,7 @@ class PaymentCreatePaymentRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets methods
      *
-     * @param string[]|null $methods The following payment methods can be defined as available when creating the payment. _Ex._ if `[\"card\"]` is sent all available card methods for the account will be available.  **card** - dankort - mastercard - visa - visadebit / visaelectron - mastercarddebit  **wallet** - mobilepay - vippspsp - googlepay - applepay  **paylater** - anyday - viabill  **thirdparty** - paypal - klarna  **banktransfer** - swish
+     * @param string[]|null $methods The following payment methods can be defined as available when creating the payment. _Ex._ if `[\"card\"]` is sent all available card methods for the account will be available.  **card** - dankort - mastercard - visa - visadebit / visaelectron - mastercarddebit  **wallet** - mobilepay - vippspsp - googlepay - applepay  **paylater** - anyday - viabill  **thirdparty** - paypal - klarna - stripe_klarna  **banktransfer** - swish - stripe_ideal
      *
      * @return self
      */
