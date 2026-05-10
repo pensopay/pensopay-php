@@ -4,6 +4,7 @@
 README.md
 composer.json
 docs/Api/AccountApi.md
+docs/Api/BrandingsApi.md
 docs/Api/HealthcheckApi.md
 docs/Api/MethodsApi.md
 docs/Api/PaymentsApi.md
@@ -12,6 +13,9 @@ docs/Api/SettlementApi.md
 docs/Api/SubscriptionsApi.md
 docs/Api/SurchargeApi.md
 docs/Model/Account.md
+docs/Model/BrandingBrandingRequest.md
+docs/Model/BrandingBrandingResponse.md
+docs/Model/BrandingBrandingsResponse.md
 docs/Model/ConditionBase.md
 docs/Model/CreateRuleRequest.md
 docs/Model/CreateSubscriptionRequest.md
@@ -70,6 +74,7 @@ docs/Model/UpdateRule.md
 docs/Model/UpdateRuleRequest.md
 docs/Model/UpdateSubscriptionRequest.md
 lib/Api/AccountApi.php
+lib/Api/BrandingsApi.php
 lib/Api/HealthcheckApi.php
 lib/Api/MethodsApi.php
 lib/Api/PaymentsApi.php
@@ -82,6 +87,9 @@ lib/Configuration.php
 lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/Model/Account.php
+lib/Model/BrandingBrandingRequest.php
+lib/Model/BrandingBrandingResponse.php
+lib/Model/BrandingBrandingsResponse.php
 lib/Model/ConditionBase.php
 lib/Model/CreateRuleRequest.php
 lib/Model/CreateSubscriptionRequest.php

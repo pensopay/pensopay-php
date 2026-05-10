@@ -1,6 +1,6 @@
 {
     "name": "pensopay/pensopay-php",
-    "description": "Acquire your payments using PHP with the pensopay API",
+    "description": "Create and manage your Payments",
     "keywords": [
         "openapitools",
         "openapi-generator",
@@ -8,10 +8,9 @@
         "php",
         "sdk",
         "rest",
-        "api",
-        "pensopay"
+        "api"
     ],
-    "homepage": "https://pensopay.com",
+    "homepage": "https://openapi-generator.tech",
     "license": "MIT",
     "authors": [
         {

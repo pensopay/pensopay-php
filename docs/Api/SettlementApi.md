@@ -1,5 +1,7 @@
 # Pensopay\Client\SettlementApi
 
+
+
 All URIs are relative to https://api.pensopay.com/v2, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

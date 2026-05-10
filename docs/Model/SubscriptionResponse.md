@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **success_url** | **string** |  | [optional]
 **cancel_url** | **string** |  | [optional]
 **mandate_id** | **int** |  | [optional]
-**methods** | **string[]** | Payment methods that will be available for the subscription.   - card   - mobilepay   - applepay   - googlepay | [optional]
+**methods** | **string[]** | The following payment methods can be defined as available when creating the payment. _Ex._ if &#x60;[\&quot;card\&quot;]&#x60; is sent all available card methods for the account will be available.  **card** - mastercard - visa | [optional]
 **variables** | **array<string,string>** |  | [optional]
 **id** | **int** |  |
 **state** | **string** |  |
